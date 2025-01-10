@@ -18,7 +18,7 @@ header {
     top: 0;
     z-index: 10;
     padding: 20px 40px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .header-content {
@@ -30,13 +30,6 @@ header {
     padding: 0 20px;
 }
 
-/* Left Logo Styling */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
 .logo img {
     width: 50px;
     height: 50px;
@@ -44,7 +37,7 @@ header {
 }
 
 .logo img:hover {
-    transform: scale(1.1); /* Slight zoom effect on hover */
+    transform: scale(1.1);
 }
 
 .logo-text {
@@ -53,9 +46,13 @@ header {
     color: #333;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: color 0.3s ease;
 }
 
-/* Right Navigation Links Styling */
+.logo-text:hover {
+    color: #ffffff; 
+}
+
 .nav-links ul {
     list-style: none;
     display: flex;
@@ -76,54 +73,213 @@ header {
 }
 
 .nav-links a:hover {
-    color: #ffffff; /* Color on hover */
-    transform: translateY(-2px); 
+    color: #ffffff;
+    transform: translateY(-2px);
 }
 
-/* Social Link Styling */
 .social a {
-    font-size: 1.5rem; /* Icon size */
-    color: #8693AB; /* Default color */
+    font-size: 1.5rem;
+    color: #8693AB;
     transition: color 0.3s ease;
 }
 
 .social a:hover {
-    color: #BDD4E7; /* LinkedIn and GitHub color on hover */
-}
-
-/* Email Icon Styling */
-.email-container a {
-    font-size: 1.5rem;
-    color: inherit; /* Keeps the text color unchanged */
-    transition: color 0.3s ease;
+    color: #BDD4E7;
 }
 
 .email-container a i {
-    color: #8693AB; /* Default color for the email icon */
+    font-size: 1.5rem;
+    color: #8693AB;
+    transition: color 0.3s ease;
 }
 
 .email-container a:hover i {
-    color: #BDD4E7; /* Custom color for email icon hover */
+    color: #BDD4E7;
+}
+
+/* Section Header Styling */
+.section-header {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #BDD4E7; /* Header color */
+}
+
+/* About Section Styling */
+#about-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #BDD4E7; /* Header color */
+}
+
+.headshot img {
+    width: 170px;
+    height: 220px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.bio {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333; /* Section font color */
+}
+
+.social {
+    text-align: center;
+    gap: 20px;
+}
+
+/* Skills Section Styling */
+#skills-sec h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #BDD4E7; /* Header color */
+}
+
+.skills-content {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 0 20px;
+}
+
+.skills-column {
+    width: 45%;
+}
+
+.skills-column h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333; /* Section font color */
+}
+
+.skills-column p {
+    font-size: 1rem;
+    color: #333; /* Section font color */
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.skills-column p:hover {
+    color: #BDD4E7;
+}
+
+/* Tools & Languages Section Styling */
+#tools-sec h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #BDD4E7; /* Header color */
+}
+
+.tools-languages-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 0 20px;
+}
+
+.tools-column,
+.languages-column {
+    width: 45%;
+}
+
+.tools-column h3,
+.languages-column h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333; /* Section font color */
+}
+
+.tools-column p,
+.languages-column p {
+    font-size: 1rem;
+    color: #333; /* Section font color */
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.tools-column p:hover,
+.languages-column p:hover {
+    color: #BDD4E7;
+}
+
+/* Projects Section Styling */
+#projects-sec {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#projects-sec h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #BDD4E7; /* Header color */
+}
+
+#projects-sec h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #333; /* Section font color */
+}
+
+/* Contact Section Styling */
+#contact-sec {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#contact-sec h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #BDD4E7; /* Header color */
+}
+
+.email-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.email-container a {
+    font-size: 1.25rem;
+    color: #333; /* Section font color */
+    transition: color 0.3s ease;
+}
+
+.email-container a:hover {
+    color: #BDD4E7;
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-    .header-content {
+    .skills-content {
         flex-direction: column;
         align-items: center;
     }
 
-    .nav-links ul {
+    .tools-languages-container {
         flex-direction: column;
-        gap: 15px;
-        text-align: center;
+        align-items: center;
     }
 
-    .logo {
-        margin-bottom: 15px;
-    }
-
-    .logo-text {
-        font-size: 1.2rem; /* Adjust logo text size for mobile */
+    .skills-column,
+    .tools-column,
+    .languages-column {
+        width: 100%;
+        margin-bottom: 20px;
     }
 }
