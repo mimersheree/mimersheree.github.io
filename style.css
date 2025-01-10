@@ -80,6 +80,32 @@ header {
     transform: translateY(-2px); 
 }
 
+/* Social Link Styling */
+.social a {
+    font-size: 1.5rem; /* Icon size */
+    color: #8693AB; /* Default color */
+    transition: color 0.3s ease;
+}
+
+.social a:hover {
+    color: #BDD4E7; /* LinkedIn and GitHub color on hover */
+}
+
+/* Email Icon Styling */
+.email-container a {
+    font-size: 1.5rem;
+    color: inherit; /* Keeps the text color unchanged */
+    transition: color 0.3s ease;
+}
+
+.email-container a i {
+    color: #8693AB; /* Default color for the email icon */
+}
+
+.email-container a:hover i {
+    color: #BDD4E7; /* Custom color for email icon hover */
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .header-content {
@@ -100,6 +126,4 @@ header {
     .logo-text {
         font-size: 1.2rem; /* Adjust logo text size for mobile */
     }
-
-    
 }
