@@ -9,6 +9,12 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #ffffff;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center all content horizontally */
+    justify-content: flex-start; /* Start from the top */
+    min-height: 100vh; /* Ensure full viewport height */
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* Header Styling */
@@ -17,17 +23,24 @@ header {
     position: sticky;
     top: 0;
     z-index: 10;
-    padding: 20px 40px;
+    width: 100%;
+    padding: 15px 40px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
@@ -47,10 +60,11 @@ header {
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: color 0.3s ease;
+    margin-left: 10px;
 }
 
 .logo-text:hover {
-    color: #ffffff; 
+    color: #ffffff;
 }
 
 .nav-links ul {
@@ -77,14 +91,188 @@ header {
     transform: translateY(-2px);
 }
 
+/* Full-Width Sections */
+#about-section, #projects-sec, #skills-sec, #tools-sec, #contact-sec {
+    width: 100%;
+    padding: 50px 20px;
+    box-sizing: border-box;
+}
+
+/* Alternating Background Colors */
+#about-section {
+    background-color: #f4f9fb;
+}
+
+#projects-sec {
+    background-color: #BDD4E7;
+}
+
+#skills-sec {
+    background-color: #f4f9fb;
+}
+
+#tools-sec {
+    background-color: #BDD4E7;
+}
+
+#contact-sec {
+    background-color: #f4f9fb;
+}
+
+/* Section Header Styling */
+.section-header, #about-section h2, #skills-sec h2, #tools-sec h2, #projects-sec h2, #contact-sec h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2C3E50;
+    width: 100%;
+    margin-top: 0;
+}
+
+/* Section Content Styling */
+.project-content, .skills-content, .tools-languages-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* About Section Adjustments for Headshot and Bio */
+.headshot img {
+    width: 226px;
+    height: 300px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bio {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Social Icons */
+.social {
+    text-align: center;
+    gap: 20px;
+}
+
 .social a {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #8693AB;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social a:hover {
-    color: #BDD4E7;
+    color: #BDD4E7; /* Change to your desired hover color */
+    transform: scale(1.1);
+}
+
+/* Navigation Centering */
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #BDD4E7;
+    width: 100%;
+    padding: 30px 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Email Container Adjustments */
+.email-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .skills-content, .tools-languages-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills-column, .tools-column, .languages-column {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Adjust header titles for mobile view */
+    .section-header {
+        font-size: 2rem;
+    }
+}
+
+/* Specific Adjustments for the Content Layout */
+#projects-sec .project-content {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Ensure content wraps on smaller screens */
+}
+
+.project-header {
+    width: 30%;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #2C3E50;
+    margin-bottom: 20px;
+}
+
+#projects-sec .project-header img {
+    max-width: 100%;
+    height: auto;
+}
+
+.skills-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.skills-column, .tools-column, .languages-column {
+    width: 45%;
+}
+
+.skills-column h3, .tools-column h3, .languages-column h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.25rem;
+    transition: color 0.3s ease, transform 0.3s ease; /* Add transition for color and transformation */
+}
+
+.skills-column h3:hover, .tools-column h3:hover, .languages-column h3:hover {
+    color: #BDD4E7; /* Change to your desired hover color */
+    transform: scale(1.1); /* Scale up the text on hover */
+}
+
+.skills-list, .tools-list, .languages-list {
+    list-style: none;
+    font-size: 1rem;
+    color: #333;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.skills-list li:hover, .tools-list li:hover, .languages-list li:hover {
+    color: #BDD4E7; /* Change to your desired hover color */
+    transform: translateX(5px); /* Slight horizontal movement on hover */
 }
 
 .email-container a i {
@@ -95,191 +283,4 @@ header {
 
 .email-container a:hover i {
     color: #BDD4E7;
-}
-
-/* Section Header Styling */
-.section-header {
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 30px;
-    color: #BDD4E7; /* Header color */
-}
-
-/* About Section Styling */
-#about-section h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 30px;
-    color: #BDD4E7; /* Header color */
-}
-
-.headshot img {
-    width: 170px;
-    height: 220px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
-
-.bio {
-    font-size: 1rem;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333; /* Section font color */
-}
-
-.social {
-    text-align: center;
-    gap: 20px;
-}
-
-/* Skills Section Styling */
-#skills-sec h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 30px;
-    color: #BDD4E7; /* Header color */
-}
-
-.skills-content {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin: 0 20px;
-}
-
-.skills-column {
-    width: 45%;
-}
-
-.skills-column h3 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #333; /* Section font color */
-}
-
-.skills-column p {
-    font-size: 1rem;
-    color: #333; /* Section font color */
-    margin-bottom: 10px;
-    transition: color 0.3s ease;
-}
-
-.skills-column p:hover {
-    color: #BDD4E7;
-}
-
-/* Tools & Languages Section Styling */
-#tools-sec h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 30px;
-    color: #BDD4E7; /* Header color */
-}
-
-.tools-languages-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin: 0 20px;
-}
-
-.tools-column,
-.languages-column {
-    width: 45%;
-}
-
-.tools-column h3,
-.languages-column h3 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #333; /* Section font color */
-}
-
-.tools-column p,
-.languages-column p {
-    font-size: 1rem;
-    color: #333; /* Section font color */
-    margin-bottom: 10px;
-    transition: color 0.3s ease;
-}
-
-.tools-column p:hover,
-.languages-column p:hover {
-    color: #BDD4E7;
-}
-
-/* Projects Section Styling */
-#projects-sec {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-#projects-sec h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #BDD4E7; /* Header color */
-}
-
-#projects-sec h3 {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-    color: #333; /* Section font color */
-}
-
-/* Contact Section Styling */
-#contact-sec {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-#contact-sec h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #BDD4E7; /* Header color */
-}
-
-.email-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.email-container a {
-    font-size: 1.25rem;
-    color: #333; /* Section font color */
-    transition: color 0.3s ease;
-}
-
-.email-container a:hover {
-    color: #BDD4E7;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .skills-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .tools-languages-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .skills-column,
-    .tools-column,
-    .languages-column {
-        width: 100%;
-        margin-bottom: 20px;
-    }
 }
