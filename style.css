@@ -1,4 +1,111 @@
 /* Basic Styling */
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Comfortaa", serif;
+}
+
+html {
+    scroll-behavior: smooth; /*section scroll down*/
+}
+
+p {
+    color: rgb(121, 121, 121)
+}
+
+/* Transition */
+a, .btn {
+    transition: all 300ms ease;
+}
+
+/* Desktop Navigation */
+
+nav, .nav-links {
+    display: flex;
+}
+
+nav {
+    justify-content: space-around;
+    align-items: center;
+    height: 17vh;
+}
+
+.nav-links {
+    gap: 2rem; 
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+/* links */
+a {
+    color: #333333;
+    text-decoration: none;
+    text-decoration-color: white;
+}
+
+a:hover {
+    color: #8da9bd;
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    text-decoration-color: #d3e4f1;
+}
+
+/* logo */
+.logo {
+    font-size: 2rem;
+    color: #333333;
+}
+
+.logo:hover {
+    cursor: default; /* changes cursor when you hover */
+} 
+
+/* Hamburger Menu Styling */
+
+#hamburger-nav {
+    display: none;
+}
+
+.hamburger-menu { /* hamburger class */
+    position: relative;
+    display: inline-block;
+}
+
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.hamburger-icon span { /* lines of hamburger */
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transition: all 0.3 ease-in-out; /* makes an x to close */
+}
+
+.menu-links {
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    background-color: white;
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3 ease-in-out;
+}
+
+/* Basic Styling 
 * {
     margin: 0;
     padding: 0;
@@ -11,13 +118,14 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center all content horizontally */
-    justify-content: flex-start; /* Start from the top */
-    min-height: 100vh; /* Ensure full viewport height */
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    align-items: center; /* Center all content horizontally */ 
+    /*
+    justify-content: flex-start; /* Start from the top 
+    min-height: 100vh; /* Ensure full viewport height 
+    overflow-x: hidden; /* Prevent horizontal scroll 
 }
 
-/* Header Styling */
+/* Header Styling 
 header {
     background-color: #BDD4E7;
     position: sticky;
@@ -91,14 +199,14 @@ header {
     transform: translateY(-2px);
 }
 
-/* Full-Width Sections */
+/* Full-Width Sections 
 #about-section, #projects-sec, #skills-sec, #tools-sec, #contact-sec {
     width: 100%;
     padding: 50px 20px;
     box-sizing: border-box;
 }
 
-/* Alternating Background Colors */
+/* Alternating Background Colors 
 #about-section {
     background-color: #F4F9FB;
 }
@@ -119,7 +227,7 @@ header {
     background-color: #f4f9fb;
 }
 
-/* Section Header Styling */
+/* Section Header Styling 
 .section-header, #about-section h2, #skills-sec h2, #tools-sec h2, #projects-sec h2, #contact-sec h2 {
     font-size: 2.5rem;
     font-weight: bold;
@@ -130,7 +238,7 @@ header {
     margin-top: 0;
 }
 
-/* Section Content Styling */
+/* Section Content Styling 
 .project-content, .skills-content, .tools-languages-container {
     display: flex;
     flex-direction: column;
@@ -138,7 +246,7 @@ header {
     justify-content: center;
 }
 
-/* About Section Adjustments for Headshot and Bio */
+/* About Section Adjustments for Headshot and Bio 
 .headshot img {
     width: 226px;
     height: 300px;
@@ -156,7 +264,7 @@ header {
     color: #333;
 }
 
-/* Social Icons */
+/* Social Icons 
 .social {
     text-align: center;
     gap: 20px;
@@ -169,17 +277,17 @@ header {
 }
 
 .social a:hover {
-    color: #BDD4E7; /* Change to your desired hover color */
+    color: #BDD4E7; /* Change to your desired hover color 
     transform: scale(1.1);
 }
 
-/* Navigation Centering */
+/* Navigation Centering 
 .nav-links {
     display: flex;
     justify-content: flex-end;
 }
 
-/* Footer Styling */
+/* Footer Styling 
 footer {
     background-color: #BDD4E7;
     width: 100%;
@@ -192,7 +300,7 @@ footer p {
     font-size: 1rem;
 }
 
-/* Email Container Adjustments */
+/* Email Container Adjustments 
 .email-container {
     display: flex;
     justify-content: center;
@@ -201,7 +309,7 @@ footer p {
     margin-top: 20px;
 }
 
-/* Mobile Responsiveness */
+/* Mobile Responsiveness 
 @media (max-width: 768px) {
     .skills-content, .tools-languages-container {
         flex-direction: column;
@@ -213,18 +321,18 @@ footer p {
         margin-bottom: 20px;
     }
 
-    /* Adjust header titles for mobile view */
+    /* Adjust header titles for mobile view 
     .section-header {
         font-size: 2rem;
     }
 }
 
-/* Specific Adjustments for the Content Layout */
+/* Specific Adjustments for the Content Layout 
 #projects-sec .project-content {
     display: flex;
     justify-content: center;
     gap: 30px;
-    flex-wrap: wrap; /* Ensure content wraps on smaller screens */
+    flex-wrap: wrap; /* Ensure content wraps on smaller screens 
 }
 
 .project-header {
@@ -256,11 +364,11 @@ footer p {
     margin-bottom: 20px;
     font-size: 1.25rem;
     transition: color 0.3s ease, transform 0.3s ease; /* Add transition for color and transformation */
-}
 
+/* 
 .skills-column h3:hover, .tools-column h3:hover, .languages-column h3:hover {
-    color: #BDD4E7; /* Change to your desired hover color */
-    transform: scale(1.1); /* Scale up the text on hover */
+    color: #BDD4E7; /* Change to your desired hover color 
+    transform: scale(1.1); /* Scale up the text on hover 
 }
 
 .skills-list, .tools-list, .languages-list {
@@ -271,8 +379,8 @@ footer p {
 }
 
 .skills-list li:hover, .tools-list li:hover, .languages-list li:hover {
-    color: #BDD4E7; /* Change to your desired hover color */
-    transform: translateX(5px); /* Slight horizontal movement on hover */
+    color: #BDD4E7; /* Change to your desired hover color 
+    transform: translateX(5px); /* Slight horizontal movement on hover 
 }
 
 .email-container a i {
@@ -283,4 +391,4 @@ footer p {
 
 .email-container a:hover i {
     color: #BDD4E7;
-}
+} */
