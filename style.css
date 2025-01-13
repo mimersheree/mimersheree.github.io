@@ -90,7 +90,7 @@ a:hover {
 .hamburger-icon span { /* lines of hamburger */
     width: 100%;
     height: 2px;
-    background-color: black;
+    background-color: #333333;
     transition: all 0.3 ease-in-out; /* makes an x to close */
 }
 
@@ -146,6 +146,7 @@ a:hover {
 }
 
 /* Section Styling */
+
 section {
     padding-top: 4vh;
     height: 96vh;
@@ -167,10 +168,10 @@ section {
 }
 
 .section__pic-container {
-    display: flex;
-    height: 400px;
-    width: 400px;
-    margin: auto 0;
+   display: flex;
+   height: 400px;
+   width: 400px;
+   margin: auto 0;
 }
 
 .section__text {
@@ -185,7 +186,7 @@ section {
 .section__text__p1 {
     text-align: center;
 }
-.section__text__p1 {
+.section__text__p2 {
     font-size: 1.75rem;
     margin-bottom: 0.5rem;
 }
@@ -203,11 +204,59 @@ section {
 }
 
 /* Icons Styling */
+
 .icon{
     cursor: pointer;
     height: 2rem;
 }
 
+/* Buttons Styling */
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding: 1rem;
+    width: 8rem;
+    border-radius: 2rem;
+}
+
+.btn-color-1, .btn-color2 {
+    border: #c5c5c5 0.1rem solid;
+}
+
+.btn-color-1:hover, .btn-color2:hover {
+    cursor: pointer;
+}
+
+.btn-color-1, .btn-color2:hover {
+    background: #d3e4f1;
+    color: #000000;
+}
+
+.btn-color-1:hover {
+    background: #a5b6d6;
+}
+
+.btn-color-2 {
+    background: none;
+}
+
+.btn-color-2:hover {
+    background: #a5b6d6;
+}
+.btn-color-2 {
+    border: #c5c5c5 0.1rem solid;
+}
+
+.btn.container {
+    gap: 1rem;
+}
 /* Basic Styling 
 * {
     margin: 0;
