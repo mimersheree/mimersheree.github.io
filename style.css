@@ -78,7 +78,7 @@ a:hover {
     display: inline-block;
 }
 
-.hamburger-icon {
+.hamburger-icon { /* style of hamburger icon */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -104,6 +104,47 @@ a:hover {
     overflow: hidden;
     transition: all 0.3 ease-in-out;
 }
+
+/* menu elements style */
+.menu-links a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #333333;
+    text-decoration: none;
+    transition: all 0.3 ease-in-out;
+}
+
+/* list elements in menu */
+.menu-links li {
+    list-style: none;
+}
+
+.menu-links.open { /* added class does this */
+    max-height: 300px;
+}
+
+.hamburger-icon.open span:first-child {
+    transform: rotate(45deg) translate(10px, 5px); /* translate line to rotate in x,y dir */
+}
+.hamburger-icon.open span:nth-child(2) { /* removes second line */
+    opacity: 0;
+}
+.hamburger-icon.open span:last-child {
+    transform: rotate(-45deg) translate(10px, -5px);
+}
+
+.hamburger-icon span:first-child {
+    transform: none;
+}
+.hamburger-icon span:first-child {
+    opacity: 1;
+}
+.hamburger-icon span:first-child {
+    transform: none;
+}
+
 
 /* Basic Styling 
 * {
