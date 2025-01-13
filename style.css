@@ -25,7 +25,7 @@ a, .btn {
     transition: all 300ms ease;
 }
 
-/* Desktop Navigation */
+/* Desktop Navigation Styling*/
 
 nav, .nav-links {
     display: flex;
@@ -144,6 +144,8 @@ a:hover {
 .hamburger-icon span:first-child {
     transform: none;
 }
+
+/* Section Styling */
 
 
 /* Basic Styling 
