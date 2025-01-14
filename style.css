@@ -208,6 +208,11 @@ section {
 .icon{
     cursor: pointer;
     height: 2rem;
+    transition: filter 0.3s;
+}
+
+.icon:hover {
+    filter: invert(86%) sepia(29%) saturate(300%) hue-rotate(182deg) brightness(95%) contrast(88%);
 }
 
 /* Buttons Styling */
@@ -235,12 +240,11 @@ section {
 }
 
 .btn-color-1, .btn-color2:hover {
-    background: #d3e4f1;
-    color: #000000;
+    background: #d4e5f2;
 }
 
 .btn-color-1:hover {
-    background: #a5b6d6;
+    background: #8da9bd;
 }
 
 .btn-color-2 {
@@ -248,7 +252,7 @@ section {
 }
 
 .btn-color-2:hover {
-    background: #a5b6d6;
+    background: #8da9bd;
 }
 .btn-color-2 {
     border: #c5c5c5 0.1rem solid;
@@ -257,6 +261,8 @@ section {
 .btn.container {
     gap: 1rem;
 }
+
+
 /* Basic Styling 
 * {
     margin: 0;
