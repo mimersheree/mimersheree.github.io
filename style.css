@@ -313,8 +313,8 @@ section {
 }
 
 .section-container {
-    gap: 3.5rem;
-    height: 60%;
+    gap: 5rem;
+    height: 70%;
     text-align: justify;
 }
 
@@ -322,6 +322,10 @@ section {
     height: 450px;
     width: 450px;
     margin: auto 0;
+}
+
+.text-container p {
+    color:#333333;
 }
 
 
