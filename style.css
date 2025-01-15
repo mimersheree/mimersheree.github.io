@@ -181,10 +181,12 @@ section {
 
 .section__text p {
     font-weight: 600;
+    color:#8da9bd;
 }
 
 .section__text__p1 {
     text-align: center;
+    color: #c5c5c5;
 }
 .section__text__p2 {
     font-size: 1.75rem;
@@ -194,6 +196,7 @@ section {
 .title {
     font-size: 3rem;
     text-align: center;
+    color: #333333;
 }
 
 #socials-container {
@@ -209,6 +212,7 @@ section {
     cursor: pointer;
     height: 2rem;
     transition: filter 0.3s;
+    filter: invert(0%) brightness(0%) saturate(100%) contrast(80%) grayscale(100%) sepia(20%);
 }
 
 .icon:hover {
@@ -240,11 +244,11 @@ section {
 }
 
 .btn-color-1, .btn-color2:hover {
-    background: #d4e5f2;
+    background: #e3e5e6;
 }
 
 .btn-color-1:hover {
-    background: #e3e5e6;
+    background: #d4e5f2;
 }
 
 .btn-color-2 {
@@ -252,7 +256,7 @@ section {
 }
 
 .btn-color-2:hover {
-    background: #e3e5e6;
+    background: #d4e5f2;
 }
 .btn-color-2 {
     border: #c5c5c5 0.1rem solid;
@@ -261,6 +265,65 @@ section {
 .btn.container {
     gap: 1rem;
 }
+
+/* About Styling */
+
+#about {
+    position: relative;
+    color: #8da9bd;
+}
+
+.about-containers {
+    gap: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.about-details-container {
+    justify-content: center;
+    flex-direction: column;
+}
+
+.about-containers, .about-details-container {
+    display: flex;
+}
+
+.about-pic {
+    border-radius: 2rem;
+}
+
+.arrow {
+    position: absolute;
+    right: -5rem;
+    bottom: 2.5rem;
+}
+
+.details-container {
+    padding: 1.5rem;
+    flex: 1;
+    background: white;
+    border-radius: 2rem;
+    border: #333333 0.1rem solid;
+    border-color: #c5c5c5;
+    text-align: center;
+}
+
+.details-container p {
+    color: #333333;
+}
+
+.section-container {
+    gap: 3.5rem;
+    height: 60%;
+    text-align: justify;
+}
+
+.section__pic-container {
+    height: 450px;
+    width: 450px;
+    margin: auto 0;
+}
+
 
 
 /* Basic Styling 
