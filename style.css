@@ -257,6 +257,7 @@ section {
 
 .btn-color-2:hover {
     background: #d4e5f2;
+    cursor: pointer;
 }
 .btn-color-2 {
     border: #c5c5c5 0.1rem solid;
@@ -299,7 +300,7 @@ section {
 }
 
 .details-container {
-    padding: 1.5rem;
+    padding: 2rem;
     flex: 1;
     background: white;
     border-radius: 2rem;
@@ -328,7 +329,56 @@ section {
     color:#333333;
 }
 
+/* Scrolling Logo Styling */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f7f7f7;
+}
+.logos {
+    overflow: hidden;
+    padding: 30px 0;
+    width: 100%;
+    background: #8da9bd;
+    align-items: center;
+    white-space: nowrap;    
+}
+
+/* Adjust spacing between items */
+.logos-slide {
+    display: inline-block;
+    animation: slide 10s infinite linear;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+/* Adjust logo size */
+.logo {
+    width: 60px; 
+    height: 60px; 
+    margin-right: 10px; /* spacing */
+}
+
+.text {
+    font-size: 30px; 
+    white-space: nowrap;
+    color: #ffffff;
+}
+
+/* Animation for carousel */ 
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
 
 /* Basic Styling 
 * {
