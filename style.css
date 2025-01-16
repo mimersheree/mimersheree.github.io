@@ -329,8 +329,21 @@ section {
     color:#333333;
 }
 
-/* Scrolling Logo Styling */
+.icons{
+    cursor: pointer;
+    height: 1.5rem;
+    transition: filter 0.3s;
+    filter: invert(0%) brightness(0%) saturate(100%) contrast(80%) grayscale(100%) sepia(20%);
+}
 
+.icons:hover {
+    cursor: default;
+    filter: invert(86%) sepia(29%) saturate(300%) hue-rotate(182deg) brightness(95%) contrast(88%);
+}
+
+
+
+/* Scrolling Logo Styling */
 * {
     margin: 0;
     padding: 0;
@@ -341,12 +354,13 @@ body {
     background: #f7f7f7;
 }
 .logos {
+    display: flex;
     overflow: hidden;
-    padding: 30px 0;
+    padding: 20px 0;
     width: 100%;
     background: #8da9bd;
-    align-items: center;
     white-space: nowrap;    
+    position: relative;
 }
 
 /* Adjust spacing between items */
@@ -354,13 +368,12 @@ body {
     display: inline-block;
     animation: slide 10s infinite linear;
     padding: 10px;
-    margin-right: 10px;
 }
 
 /* Adjust logo size */
 .logo {
-    width: 60px; 
-    height: 60px; 
+    width: 50px; 
+    height: 50px; 
     margin-right: 10px; /* spacing */
 }
 
@@ -379,6 +392,12 @@ body {
         transform: translateX(-100%);
     }
 }
+
+.logos:hover .logos-slide{
+    animation-play-state: paused; 
+}
+
+
 
 /* Basic Styling 
 * {
