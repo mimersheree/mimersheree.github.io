@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <a href="index.html"><title>Mimi Pomephimkham</a></title>
+    <title>Mimi Pomephimkham</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -12,7 +12,9 @@
 
     <!-- Desktop Navigation -->
     <nav id="desktop-nav">
-        <div class="logo"><b>Mimi Pomephimkham</b></div>
+        <div class="title-name">
+            <a href="index.html"><b>Mimi Pomephimkham</b></a>
+        </div>
         <div>
             <ul class="nav-links">
                 <li><a href="#work">Work</a></li>
@@ -32,11 +34,11 @@
                 <span></span>
                 <span></span>
             </div>
-            <div class="menu-links"> <ul>                                                                          
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#work" onclick="toggleMenu()">Work</a></li>
-                <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            <div class="menu-links"> <ul>     
+                <li><a href="index.html#work" onclick="toggleMenu()">Work</a></li>                                                                     
+                <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+                <li><a href="index.html#skills" onclick="toggleMenu()">Skills</a></li>
+                <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -66,7 +68,6 @@
                 class="icon" onclick="location.href='https:github.com/mimersheree'"/>
             </div>
         </div>  
-    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#work'"/>
     </section>
 
     <!-- About Section 
@@ -217,8 +218,6 @@
     <section id="work">
         <p class="section__text__p1">Explore My</p>
         <h1 class="title">Projects</h1>  
-    
-    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#skills'"/>
     </section>
 
     <!-- Skills Section -->

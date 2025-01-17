@@ -67,6 +67,14 @@ a:hover {
     cursor: default; /* changes cursor when you hover */
 } 
 
+.title-name {
+    font-size: 1.2rem;
+    color: #333333;
+}
+
+.title-name:hover {
+    cursor: default; /* changes cursor when you hover */
+} 
 /* Hamburger Menu Styling */
 
 #hamburger-nav {
@@ -164,7 +172,7 @@ section {
     display: flex;
     justify-content: center;
     gap: 5rem;
-    height: 82vh;
+    height: 83vh;
 }
 
 .section__pic-container {
@@ -350,7 +358,7 @@ section {
 }
 
 body {
-    background: #f7f7f7;
+    background: #ffffff;
 }
 .logos {
     display: flex;
