@@ -310,12 +310,12 @@ section {
 }
 
 .details-container p {
-    color: #333333;
+    color: #333333;                                                                                           
 }
 
 .section-container {
     gap: 5rem;
-    height: 70%;
+    height: 75%;
     text-align: justify;
 }
 
@@ -340,8 +340,6 @@ section {
     cursor: default;
     filter: invert(86%) sepia(29%) saturate(300%) hue-rotate(182deg) brightness(95%) contrast(88%);
 }
-
-
 
 /* Scrolling Logo Styling */
 * {
@@ -397,6 +395,44 @@ body {
     animation-play-state: paused; 
 }
 
+/* Project Styling */
+
+/* Skills Styling */
+#skills {
+    position: relative;
+}
+
+.skills-sub-title {
+    color: #8da9bd;
+    font-weight: 600;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.skills-details-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.article-container {
+    display: flex;
+    text-align: initial;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 3rem;
+    justify-content:center 
+}
+
+article {
+    display: flex;
+    width: 10rem;
+    gap: 0.5rem;
+}
+
+article .icon {
+    cursor: default;
+}
 
 
 /* Basic Styling 
