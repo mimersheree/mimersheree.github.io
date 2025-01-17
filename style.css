@@ -350,6 +350,34 @@ section {
     filter: invert(86%) sepia(29%) saturate(300%) hue-rotate(182deg) brightness(95%) contrast(88%);
 }
 
+
+/* Collage image */
+
+.collage-image {
+    border-radius: 2rem;
+}
+
+.photo-collage {
+    gap: 5rem;
+    height: 75%;
+    text-align: center;
+}
+
+.pics-title {
+    font-size: 2rem;
+    text-align: center;
+    color: #333333;
+    cursor: pointer;
+    margin-bottom: 2rem; 
+}
+
+.collage-container img.collage-image {
+    max-width: 80%; /* This limits the image width to 80% of the container */
+    height: auto; /* Keeps the aspect ratio intact */
+    display: block; /* Ensures the image behaves as a block element */
+    margin: 0 auto; /* Centers the image horizontally */
+}
+
 /* Scrolling Logo Styling */
 * {
     margin: 0;
@@ -404,7 +432,10 @@ body {
     animation-play-state: paused; 
 }
 
-/* Project Styling */
+/* Work Styling */
+#work {
+    position: relative;
+}
 
 /* Skills Styling */
 #skills {
@@ -441,6 +472,10 @@ article {
 
 article .icon {
     cursor: default;
+}
+
+#contact {
+    position: relative;
 }
 
 
