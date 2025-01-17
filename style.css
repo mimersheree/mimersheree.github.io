@@ -59,7 +59,7 @@ a:hover {
 
 /* logo */
 .logo {
-    font-size: 2rem;
+    font-size: 1rem;
     color: #333333;
 }
 
@@ -164,7 +164,7 @@ section {
     display: flex;
     justify-content: center;
     gap: 5rem;
-    height: 80vh;
+    height: 82vh;
 }
 
 .section__pic-container {
@@ -197,6 +197,7 @@ section {
     font-size: 3rem;
     text-align: center;
     color: #333333;
+    cursor: pointer;
 }
 
 #socials-container {
