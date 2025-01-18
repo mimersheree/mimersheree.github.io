@@ -353,30 +353,42 @@ section {
 
 /* Collage image */
 
+/* Collage image */
 .collage-image {
     border-radius: 2rem;
+    max-width: 45%; /* Ensures images are not too large */
+    height: auto; /* Maintains aspect ratio */
 }
 
-.photo-collage {
-    gap: 5rem;
-    height: 75%;
-    text-align: center;
+/* Collage Container */
+.collage-container {
+    display: flex; /* Enables Flexbox */
+    justify-content: center; /* Centers images horizontally */
+    align-items: center; /* Centers images vertically */
+    gap: 1rem; /* Adds small gap between images */
+    flex-wrap: wrap; /* Allows images to wrap if needed */
+    padding: 1rem; /* Optional padding for spacing */
 }
 
+/* Pics Title */
 .pics-title {
     font-size: 2rem;
     text-align: center;
     color: #333333;
     cursor: pointer;
-    margin-bottom: 2rem; 
+    margin-bottom: 2rem; /* Space between title and images */
 }
 
-.collage-container img.collage-image {
-    max-width: 80%; /* This limits the image width to 80% of the container */
-    height: auto; /* Keeps the aspect ratio intact */
-    display: block; /* Ensures the image behaves as a block element */
-    margin: 0 auto; /* Centers the image horizontally */
+/* Section to center the content on the page */
+#photo-collage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    padding: 2rem; /* Padding for spacing */
 }
+
 
 /* Scrolling Logo Styling */
 * {
