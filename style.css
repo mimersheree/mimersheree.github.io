@@ -246,6 +246,11 @@ section {
     gap: 1rem;
 }
 
+
+#work {
+    position: relative;
+}
+
 /* Icons Styling */
 
 .icon{
@@ -475,10 +480,6 @@ body {
 
 /* Work Styling */
 
-#work {
-    position: relative;
-}
-
 .color-container {
     border-color: #000000;
     background-color: #333333;
@@ -552,8 +553,8 @@ article .icon {
     border-radius: 1rem;
     border: #c5c5c5;
     background: #ffffff;
-    margin: 2rem auto;
-    padding: 0.5rem;
+    margin: 1rem auto;
+    padding: 0.1rem;
 }
 
 .contact-info-container {
@@ -562,4 +563,15 @@ article .icon {
     justify-content: center;
     gap: 0.5rem;
     margin: 1rem;
+}
+
+/* Footer Styling */
+
+footer {
+    height: 26vh;
+    margin: 0.1rem;
+}
+
+footer p{
+    text-align: center;
 }
