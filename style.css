@@ -343,7 +343,7 @@ section {
     padding: 2rem;
     flex: 1;
     background: white;
-    border-radius: 2rem;
+    border-radius: 1rem;
     border: #333333 0.1rem solid;
     border-color: #c5c5c5;
     text-align: center;
@@ -540,5 +540,26 @@ article .icon {
 /* Contact Styling */
 
 #contact {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 70vh;
+}
+
+.contact-info-upper-container {
+    display: flex;
+    justify-content: center;
+    border-radius: 1rem;
+    border: #c5c5c5;
+    background: #ffffff;
+    margin: 2rem auto;
+    padding: 0.5rem;
+}
+
+.contact-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem;
 }
