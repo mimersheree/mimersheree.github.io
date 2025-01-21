@@ -300,6 +300,10 @@ section {
     background: #d4e5f2;
 }
 
+.btn-color-2, .btn-color2 {
+    border: #c5c5c5 0.1rem solid;
+}
+
 .btn-color-2 {
     cursor: pointer;
 }
