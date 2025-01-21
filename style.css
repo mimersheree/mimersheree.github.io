@@ -289,23 +289,11 @@ section {
 }
 
 .btn-color-1, .btn-color2:hover {
-    background: #e3e5e6;
+    background: #ffffff;
 }
 
 .btn-color-1:hover {
     background: #d4e5f2;
-}
-
-.btn-color-2 {
-    background: none;
-}
-
-.btn-color-2:hover {
-    background: #d4e5f2;
-    cursor: pointer;
-}
-.btn-color-2 {
-    border: #c5c5c5 0.1rem solid;
 }
 
 .btn.container {
