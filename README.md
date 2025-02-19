@@ -1,6 +1,6 @@
 # Portfolio
 
-Welcome! This is my beginner portfolio using HTML and CSS. 
+Welcome! This is my beginner portfolio using HTML/CSS and JavaScript.
 
 # Features 
 - Simplified layout 
