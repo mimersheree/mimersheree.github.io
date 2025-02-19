@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mimi Pomephimkham</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="master.css">
+</head>
+<body>
+    <!-- Desktop Navigation -->
+    <nav id="desktop-nav">
+        <div class="title-name">
+            <a href="index.html"><b>Mimi Pomephimkham</b></a>
+        </div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="index.html#work">Work</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hamburger Navigation -->
+    <nav id="hamburger-nav">
+        <div class="logo">Mimi Pomephimkham</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links"> <ul>     
+                <li><a href="index.html#work" onclick="toggleMenu()">Work</a></li>                                                                     
+                <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+                <li><a href="index.html#skills" onclick="toggleMenu()">Skills</a></li>
+                <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project 1 -->
+    <section id="project1">
+        <img src="./assets/Telegram_CaseStudy.png" alt="Telegram Case Study" class="case-study-img">
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <nav>
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <p> Ⓒ 2025 Mimi Pomephimkham </p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

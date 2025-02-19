@@ -574,3 +574,27 @@ footer {
 footer p{
     text-align: center;
 }
+
+/* Project 1 Styling */
+/* Remove horizontal scrolling */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Ensure the image container stretches to full width */
+.image-container {
+    width: 100vw; /* Full viewport width */
+    display: flex;
+    justify-content: center; /* Center the image */
+}
+
+/* Ensure the image spans the full width */
+.case-study-img {
+    width: 100%; /* Makes the image take the full width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: none; /* Prevents automatic scaling down */
+}
+
+
