@@ -43,7 +43,7 @@ nav {
     font-size: 1.5rem;
 }
 
-/* links */
+/* Links */
 a {
     color: #333333;
     text-decoration: none;
@@ -57,7 +57,7 @@ a:hover {
     text-decoration-color: #d3e4f1;
 }
 
-/* logo */
+/* Logo */
 .logo {
     font-size: 1rem;
     color: #333333;
@@ -74,20 +74,21 @@ a:hover {
 }
 
 .title-name:hover {
-    cursor: default; /* changes cursor when you hover */
+    cursor: default; 
 } 
+
 /* Hamburger Menu Styling */
 
 #hamburger-nav {
     display: none;
 }
 
-.hamburger-menu { /* hamburger class */
+.hamburger-menu { 
     position: relative;
     display: inline-block;
 }
 
-.hamburger-icon { /* style of hamburger icon */
+.hamburger-icon { 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -96,11 +97,11 @@ a:hover {
     cursor: pointer;
 }
 
-.hamburger-icon span { /* lines of hamburger */
+.hamburger-icon span {
     width: 100%;
     height: 2px;
     background-color: #333333;
-    transition: all 0.3 ease-in-out; /* makes an x to close */
+    transition: all 0.3 ease-in-out; 
 }
 
 .menu-links {
@@ -114,7 +115,6 @@ a:hover {
     transition: all 0.3 ease-in-out;
 }
 
-/* menu elements style */
 .menu-links a {
     display: block;
     padding: 10px;
@@ -125,19 +125,18 @@ a:hover {
     transition: all 0.3 ease-in-out;
 }
 
-/* list elements in menu */
 .menu-links li {
     list-style: none;
 }
 
-.menu-links.open { /* added class does this */
+.menu-links.open {
     max-height: 300px;
 }
 
 .hamburger-icon.open span:first-child {
-    transform: rotate(45deg) translate(10px, 5px); /* translate line to rotate in x,y dir */
+    transform: rotate(45deg) translate(10px, 5px); 
 }
-.hamburger-icon.open span:nth-child(2) { /* removes second line */
+.hamburger-icon.open span:nth-child(2) { 
     opacity: 0;
 }
 .hamburger-icon.open span:last-child {
@@ -192,7 +191,7 @@ section {
   margin: auto 0;
   overflow: hidden;
   position: relative;
-  border-radius: 50%; /* Circular container */
+  border-radius: 50%; 
   transition: transform 0.3s ease-in-out;
 }
 
@@ -425,6 +424,7 @@ section {
 
 
 /* Scrolling Logo Styling */
+
 * {
     margin: 0;
     padding: 0;
@@ -455,7 +455,7 @@ body {
 .logo {
     width: 50px; 
     height: 50px; 
-    margin-right: 10px; /* spacing */
+    margin-right: 10px; 
 }
 
 .text {
@@ -575,26 +575,24 @@ footer p{
     text-align: center;
 }
 
-/* Project 1 Styling */
-/* Remove horizontal scrolling */
+/* Project Styling */
+
 body, html {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
 
-/* Ensure the image container stretches to full width */
 .image-container {
-    width: 100vw; /* Full viewport width */
+    width: 100vw; 
     display: flex;
-    justify-content: center; /* Center the image */
+    justify-content: center; 
 }
 
-/* Ensure the image spans the full width */
 .case-study-img {
-    width: 100%; /* Makes the image take the full width */
-    height: auto; /* Maintain aspect ratio */
-    max-width: none; /* Prevents automatic scaling down */
+    width: 100%; 
+    height: auto; 
+    max-width: none; 
 }
 
 
