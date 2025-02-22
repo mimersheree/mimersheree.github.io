@@ -596,3 +596,12 @@ body, html {
 }
 
 
+/* Gif Styling */ 
+
+.case-study-gif {
+    width: 100%;
+    max-width: 500px;  
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;  
+}
