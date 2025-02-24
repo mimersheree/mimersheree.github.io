@@ -13,7 +13,7 @@ body {
 }
 
 html {
-    scroll-behavior: smooth; /*section scroll down*/
+    scroll-behavior: smooth; 
 }
 
 p {
@@ -64,7 +64,7 @@ a:hover {
 }
 
 .logo:hover {
-    cursor: default; /* changes cursor when you hover */
+    cursor: default; 
 } 
 
 .title-name {
@@ -74,7 +74,7 @@ a:hover {
 }
 
 .title-name:hover {
-    cursor: default; 
+    cursor: default;
 } 
 
 /* Hamburger Menu Styling */
@@ -234,7 +234,7 @@ section {
     font-size: 3rem;
     text-align: center;
     color: #333333;
-    cursor: pointer;
+    cursor: default;
 
 }
 
@@ -393,7 +393,6 @@ section {
     height: auto; 
 }
 
-/* Collage container */
 .collage-container {
     display: flex; 
     justify-content: center;
@@ -403,7 +402,6 @@ section {
     padding: 1rem; 
 }
 
-/* Pics title */
 .pics-title {
     font-size: 2rem;
     text-align: center;
@@ -412,7 +410,6 @@ section {
     margin-bottom: 2rem; 
 }
 
-/* Center content */
 #photo-collage {
     display: flex;
     flex-direction: column;
@@ -444,14 +441,12 @@ body {
     position: relative;
 }
 
-/* Adjust spacing between items */
 .logos-slide {
     display: inline-block;
     animation: slide 10s infinite linear;
     padding: 10px;
 }
 
-/* Adjust logo size */
 .logo {
     width: 50px; 
     height: 50px; 
@@ -464,7 +459,6 @@ body {
     color: #ffffff;
 }
 
-/* Animation for carousel */ 
 @keyframes slide {
     from {
         transform: translateX(0);
@@ -497,6 +491,16 @@ body {
 
 .project-btn {
     border-color: #c5c5c5;
+}
+
+#work .about-containers .details-container {
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+#work .about-containers .details-container:hover {
+    box-shadow: 0 10px 20px #8da9bd;
+    transform: translateY(-5px);
 }
 
 /* Skills Styling */
