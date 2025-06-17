@@ -1,408 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mimi Pomephimkham</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="media.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mimi Pomephimkham Portfolio</title>
+    <link rel="stylesheet" href="master.css">
+    <link rel="stylesheet" href="style.css" />
+    
 </head>
 <body>
 
-    <!-- Desktop Navigation -->
-    <nav id="desktop-nav">
-        <div class="title-name">
-            <a href="index.html"><b>Mimi Pomephimkham</b></a>
-        </div>
-        <div>
-            <ul class="nav-links">
-                <li><a href="#work">Work</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hamburger Navigation -->
-    <nav id="hamburger-nav">
-        <div class="logo">Mimi Pomephimkham</div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="menu-links"> <ul>     
-                <li><a href="index.html#work" onclick="toggleMenu()">Work</a></li>                                                                     
-                <li><a href="about.html" onclick="toggleMenu()">About</a></li>
-                <li><a href="index.html#skills" onclick="toggleMenu()">Skills</a></li>
-                <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Profile Section -->
-    <section id="profile">
-        <div class="section__pic-container">
-            <img src="./assets/profile_picture2.png" alt="Mimi Pomephimkham profile picture" class="zoom-img">
-        </div>
-        <div class="section__text">
-            <p class="section__text__p1">👋Hi there, I'm</p>
-            <h1 class="title">Mimi</h1>
-            <p class="section__text__p2">UX/UI <br /> Designer&Developer</p>
-            <div class="btn-container">
-                <a href="#contact">
-                    <button class="btn btn-color-1">
-                        Contact
-                    </button>
-                </a>
-            </div>
-            <div id="socials-container">
-                <img src="./assets/linkedin.png" alt="LinkedIn Profile" 
-                class="icon" onclick="location.href='https:www.linkedin.com/in/mimip002-309'"/>
-            </div>
-        </div>  
-    </section>
-
-     <!-- Logos Slide Section -->
-    <div class="logos">
+    <!-- Navigation -->
+     <nav>
+        <div class="logo title-name">Mimi Pomephimkham</div>
         
-        <div class="logos-slide">
-            <img src="./assets/m.png" alt="Logo" class="logo">
-            <span class="text">Featured Work</span>
-        </div>
-        <div class="logos-slide">
-            <img src="./assets/m.png" alt="Logo" class="logo">
-            <span class="text">Featured Work</span>
-        </div>
-        <div class="logos-slide">
-            <img src="./assets/m.png" alt="Logo" class="logo">
-            <span class="text">Featured Work</span>
-        </div>
-        <div class="logos-slide">
-            <img src="./assets/m.png" alt="Logo" class="logo">
-            <span class="text">Featured Work</span>
-        </div>
-        <div class="logos-slide">
-            <img src="./assets/m.png" alt="Logo" class="logo">
-            <span class="text">Featured Work</span>
-        </div>
-        <div class="logos-slide">
-            <img src="./assets/m.png" alt="Logo" class="logo">
-            <span class="text">Featured Work</span>
-        </div>
-        <div class="logos-slide">
-            <img src="./assets/m.png" alt="Logo" class="logo">
-            <span class="text">Featured Work</span>
-        </div>
-        <div class="logos-slide">
-            <img src="./assets/m.png" alt="Logo" class="logo">
-            <span class="text">Featured Work</span>
-        </div>
-        
-        <div class="logos-slide">
-            <img src="./assets/m.png" alt="Logo" class="logo">
-            <span class="text">Featured Work</span>
-        </div>
-        <div class="logos-slide">
-            <img src="./assets/m.png" alt="Logo" class="logo">
-            <span class="text">Featured Work</span>
-        </div>
-        <div class="logos-slide">
-            <img src="./assets/m.png" alt="Logo" class="logo">
-            <span class="text">Featured Work</span>
-        </div>
-        <div class="logos-slide">
-            <img src="./assets/m.png" alt="Logo" class="logo">
-            <span class="text">Featured Work</span>
-        </div>
-        <div class="logos-slide">
-            <img src="./assets/m.png" alt="Logo" class="logo">
-            <span class="text">Featured Work</span>
-        </div>
-        <div class="logos-slide">
-            <img src="./assets/m.png" alt="Logo" class="logo">
-            <span class="text">Featured Work</span>
-        </div>
-        <div class="logos-slide">
-            <img src="./assets/m.png" alt="Logo" class="logo">
-            <span class="text">Featured Work</span>
-        </div>
-        <div class="logos-slide">
-            <img src="./assets/m.png" alt="Logo" class="logo">
-            <span class="text">Featured Work</span>
-        </div>
-
-        <div class="logos-slide">
-            <img src="./assets/m.png" alt="Logo" class="logo">
-            <span class="text">Featured Work</span>
-        </div>
-        <div class="logos-slide">
-            <img src="./assets/m.png" alt="Logo" class="logo">
-            <span class="text">Featured Work</span>
-        </div>
-        <div class="logos-slide">
-            <img src="./assets/m.png" alt="Logo" class="logo">
-            <span class="text">Featured Work</span>
-        </div>
-        <div class="logos-slide">
-            <img src="./assets/m.png" alt="Logo" class="logo">
-            <span class="text">Featured Work</span>
-        </div>
-        <div class="logos-slide">
-            <img src="./assets/m.png" alt="Logo" class="logo">
-            <span class="text">Featured Work</span>
-        </div>
-        <div class="logos-slide">
-            <img src="./assets/m.png" alt="Logo" class="logo">
-            <span class="text">Featured Work</span>
-        </div>
-        <div class="logos-slide">
-            <img src="./assets/m.png" alt="Logo" class="logo">
-            <span class="text">Featured Work</span>
-        </div>
-        <div class="logos-slide">
-            <img src="./assets/m.png" alt="Logo" class="logo">
-            <span class="text">Featured Work</span>
+    <!-- Hamburger for mobile -->
+     <div class="hamburger-menu" id="hamburger-nav" aria-label="Menu" role="button" tabindex="0" aria-expanded="false">
+        <div class="hamburger-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </div>
+    
+    <!-- Desktop & Mobile Menu Links -->
+     <ul class="nav-links menu-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#contact-and-footer">Contact</a></li>
+    </ul>
+</nav>
 
-    <!-- Work Section-->
-    <section id="work">
-        <p class="section__text__p1">Explore My</p>
-        <h1 class="title">Projects</h1> 
-        <div class="skills-details-container">
-            <div class="about-containers">
-            <div class="details-container color container">
-                <div class="article-container">
-                    <img src="./assets/ecommerce.png" alt="Project 1" class="project-img"
-                    />
-                </div>
-                <h2 class="skills-sub-title">E-commerce Website</h2>
-                <div class="btn-container">
-                    <button class="btn btn-color-2 project-btn" 
-                    onclick="location.href='project1.html'"
-                    >
-                    View Project
-                    </button>
-                </div>
-            </div>
-            <div class="details-container color container">
-                <div class="article-container">
-                    <img src="./assets/grocery.png" alt="Project 2" class="project-img"
-                    />
-                </div>
-                <h2 class="skills-sub-title">Online Grocery Shopping</h2>
-                <div class="btn-container">
-                    <button class="btn btn-color-2 project-btn" 
-                    onclick="location.href='project2.html'"
-                    >
-                    View Project
-                    </button>
-                </div>
-            </div>
-            <div class="details-container color container">
-                <div class="article-container">
-                    <img src="./assets/Mido.png" alt="Project 3" class="project-img"
-                    />
-                </div>
-                <h2 class="skills-sub-title">Mido CRM Dashboard</h2>
-                <div class="btn-container">
-                    <button class="btn btn-color-2 project-btn" 
-                    onclick="location.href='project3.html'"
-                    >
-                    View Project
-                    </button>
-                </div>
-            </div>
+    <!-- Hero Section -->
+     <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="header" data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="faint">🫧 Hi, I'm Mimi</h1>
+            <h1>UX/UI Designer & Software Developer</h1>
+            <p>🤍 Passionate about creating meaningful user-centric experiences </p>
         </div>
+    </section>
+
+    <!-- Work Section -->
+     <section id="work">
+    <div class="project-list">
+        <h1 class="faint">Featured Work.</h1>
+        <div class="divider"></div>
+
+        <a href="project1.html" class="project" data-aos="fade-up" data-aos-duration="800">
+            <div class="project-tags">
+                <div class="tag"><p>E-COMMERCE</p></div>
+                <div class="tag"><p>WEB DEVELOPMENT</p></div>
+            </div>
+            <div class="prj-title">
+                <h2>E-commerce Website</h2>
+                <div class="arrow">
+                    <span class="iconify" data-icon="bi:arrow-right" data-inline="false" data-width="40" data-height="40"></span>
+                </div>
+            </div>
+            <h3>An online store built with a responsive design and smooth UX.</h3>
+            <div class="prj-img">
+                <img src="./assets/product1.png" alt="E-commerce project screenshot" class="index-img" />
+            </div>
+        </a>
+
+        <div class="divider"></div>
+
+        <a href="project2.html" class="project" data-aos="fade-up" data-aos-duration="800">
+            <div class="project-tags">
+                <div class="tag"><p>CRM DASHBOARD</p></div>
+                <div class="tag"><p>DATA VISUALIZATION</p></div>
+            </div>
+            <div class="prj-title">
+                <h2>Mido CRM Dashboard</h2>
+                <div class="arrow">
+                    <span class="iconify" data-icon="bi:arrow-right" data-inline="false" data-width="40" data-height="40"></span>
+                </div>
+            </div>
+            <h3>A dashboard to manage customer relationships efficiently.</h3>
+            <div class="prj-img">
+                <img src="./assets/product2.png" alt="Mido CRM dashboard screenshot" class="index-img" />
+            </div>
+        </a>
+
+        <div class="divider"></div>
+
+        <a href="project3.html" class="project" data-aos="fade-up" data-aos-duration="800">
+            <div class="project-tags">
+                <div class="tag"><p>ONLINE SHOPPING</p></div>
+                <div class="tag"><p>USER EXPERIENCE</p></div>
+            </div>
+            <div class="prj-title">
+                <h2>Online Grocery Shopping</h2>
+                <div class="arrow">
+                    <span class="iconify" data-icon="bi:arrow-right" data-inline="false" data-width="40" data-height="40"></span>
+                </div>
+            </div>
+            <h3>Improving the online grocery shopping experience for users.</h3>
+            <div class="prj-img">
+                <img src="./assets/product3.png" alt="Online grocery shopping screenshot" class="index-img" />
+            </div>
+        </a>
+
+        <div class="divider"></div>
     </div>
-        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow"
-        onclick="location.href='./#skills'"
-        /> 
-    </section>
+</section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <p class="section__text__p1">Dive into</p>
-        <h1 class="title">Skills</h1>
-        <div class="skills-details-container">
-            <div class="about-containers">
-                <div class="details-container">
-                    <h2 class="skills-sub-title">UI/UX</h2>
-                    <div class="article-container">
-                        <article>
-                            <img src="./assets/shield.png" alt="skills icon" class="icons"
-                            />
-                            <div>
-                                <h3>Interaction Design</h3>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/shield.png" alt="skills icon" class="icons"
-                            />
-                            <div>
-                                <h3>Visual Design</h3>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/shield.png" alt="skills icon" class="icons"
-                            />
-                            <div>
-                                <h3>Design Systems</h3>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/shield.png" alt="skills icon" class="icons"
-                            />
-                            <div>
-                                <h3>User Research</h3>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/shield.png" alt="skills icon" class="icons"
-                            />
-                            <div>
-                                <h3>Wireframing</h3>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/shield.png" alt="skills icon" class="icons"
-                            />
-                            <div>
-                                <h3>Prototyping</h3>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/shield.png" alt="skills icon" class="icons"
-                            />
-                            <div>
-                                <h3>Usability Testing</h3>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/shield.png" alt="skills icon" class="icons"
-                            />
-                            <div>
-                                <h3>Affinity Mapping</h3>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/shield.png" alt="skills icon" class="icons"
-                            />
-                            <div>
-                                <h3>Data Analysis</h3>
-                            </div> 
-                        </article>
-                    </div>
-                </div>
-                <div class="details-container">
-                    <h2 class="skills-sub-title">Tools and Languages</h2>
-                    <div class="article-container">
-                        <article>
-                            <img src="./assets/shield.png" alt="skills icon" class="icons"
-                            />
-                            <div>
-                                <h3>Figma</h3>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/shield.png" alt="skills icon" class="icons"
-                            />
-                            <div>
-                                <h3>HTML/CSS</h3>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/shield.png" alt="skills icon" class="icons"
-                            />
-                            <div>
-                                <h3>JavaScript</h3>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/shield.png" alt="skills icon" class="icons"
-                            />
-                            <div>
-                                <h3>Java</h3>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/shield.png" alt="skills icon" class="icons"
-                            />
-                            <div>
-                                <h3>Python</h3>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/shield.png" alt="skills icon" class="icons"
-                            />
-                            <div>
-                                <h3>Git</h3>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/shield.png" alt="skills icon" class="icons"
-                            />
-                            <div>
-                                <h3>GitHub</h3>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/shield.png" alt="skills icon" class="icons"
-                            />
-                            <div>
-                                <h3>Miro</h3>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/shield.png" alt="skills icon" class="icons"
-                            />
-                            <div>
-                                <h3>Jira</h3>
-                            </div> 
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow"
-        onclick="location.href='./#contact'"
-        /> 
-    </section>
+<!-- Contact and Footer Section -->
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <p class="section__text__p1">Thank you for visiting!</p>
-        <h1 class="title">Contact</h1>
-        <div class="contact-info-upper-container">
-            <div class="contact-info-container">
-                <p><a href="mailto:mimiphim2@gmail.com">💌 Mail</a></p>
-            </div>
-            <div class="contact-info-container">
-                <p><a href="https:www.linkedin.com/in/mimip002-309">💛 Let's connect!</a></p>
-            </div>
-        </div>
-        <p class="resume-text" style="text-align: center;">Please email me for my full resume.</p>
-    </section>
+<section id="contact-and-footer">
+<div class="footer-grid-container container">
+<div class="footer-column branding-column">
+ <h2 class="footer-heading-logo"><span class="emoji"> 𐙚 </span> Thanks for visiting! </h2>
+ <p class="footer-tagline">Let's chat about design, good food, and matcha. 🍵</p>
+ <p class="footer-copyright">© Mimi Pomephimkham 2025</p>
+</div>
 
-    <!-- Footer Section -->
-    <footer>
-        <nav>
-            <div class="nav-links-container">
-                <ul class="nav-links">
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-        <p> Ⓒ 2025 Mimi Pomephimkham </p>
-    </footer>
+<div class="footer-column contact-column-right">  <h3 class="footer-subheading">contact me</h3>
+<ul class="footer-links">
+<li><a href="mailto:mimiphim2@gmail.com" class="link">Email</a></li>
+<li><a href="https://www.linkedin.com/in/mimiphim/" target="_blank" rel="noopener" class="link">LinkedIn</a></li>
+</ul>
+</div>
+</div>
+</section>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollUpBtn" title="Scroll to top">↑</button>
     <script src="script.js"></script>
 </body>
 </html>
