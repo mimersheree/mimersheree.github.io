@@ -389,3 +389,40 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Music list 
+document.addEventListener('DOMContentLoaded', function() {
+    const spotifyPlayButton = document.getElementById('spotifyPlayButton');
+    const musicNoteImageWrapper = document.querySelector('.music-image-wrapper');
+    const musicListItem = document.querySelector('.music-list li[data-song="zombie-pop"]');
+
+    const spotifySongLink = 'https://open.spotify.com/track/5zhMMVw097YOSvT0oDGgDV?si=12b1151ed25d43f7';
+
+    function openSpotify() {
+        if (!spotifyPlayButton || !musicNoteImageWrapper) return;
+
+        spotifyPlayButton.style.transform = 'translate(-50%, -50%) scale(1.2)';
+        spotifyPlayButton.classList.add('playing');
+
+        setTimeout(() => {
+            if (musicNoteImageWrapper.matches(':hover')) {
+                spotifyPlayButton.style.transform = 'translate(-50%, -50%) scale(1.05) rotate(5deg)';
+            } else {
+                spotifyPlayButton.style.transform = 'translate(-50%, -50%) scale(1)';
+            }
+        }, 150);
+
+        window.open(spotifySongLink, '_blank');
+
+        if (musicListItem) {
+            musicListItem.classList.add('playing');
+            setTimeout(() => {
+                musicListItem.classList.remove('playing');
+            }, 3000);
+        }
+    }
+
+    if (spotifyPlayButton) {
+        spotifyPlayButton.addEventListener('click', openSpotify);
+    }
+});

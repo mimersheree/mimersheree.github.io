@@ -89,11 +89,13 @@
                     <ul class="skills-list">
                         <li>Interaction Design</li>
                         <li>Product Design</li>
-                        <li>UX research</li>
+                        <li>UX Research</li>
                         <li>Wireframing</li>
                         <li>Prototyping</li>
                         <li>Usability Testing</li>
+                        <li>Design Systems</li>
                         <li>Front End Development</li>
+                        <li>Version Control</li>
                         <li class="skills-more">... and more!</li>
                     </ul>
                 </div>
@@ -104,11 +106,12 @@
                         Currently Improving
                     </h3>
                     <ul class="skills-list">
-                        <li>Accessibiltiy Design</li>
+                        <li>Accessibility Design</li>
                         <li>Data Visualization</li>
                         <li>Service Design Principles</li>
                         <li>AI in Design & Development</li>
                         <li>Database Management</li>
+                        <li>API Development & Integration</li>
                     </ul>
                 </div>
             </div>
@@ -116,27 +119,30 @@
     </section>
 
     <!-- Music Section -->
-    <section id="music">
-        <div class="music-container container">
-            <div class="music-content-wrapper">
-                <div class="music-grid">
-                    <div class="music-image-container">
-                        <img src="assets/playlist.jpg" alt="Music Note" class="music-note-image" />
+<section id="music">
+    <div class="music-container container">
+        <div class="music-content-wrapper">
+            <div class="music-grid">
+                <div class="music-image-container">
+                    <div class="music-image-wrapper">
+                        <img src="assets/playlist.jpg" alt="Music Playlist" class="music-note-image" />
+                        <button class="play-button" id="spotifyPlayButton" aria-label="Play on Spotify">
+    <span class="play-icon-arrow"></span> <span class="play-icon-text">PLAY</span> </button>
                     </div>
-                    
-                    <div class="music-content">
-                        <h3 class="music-title">
-                            <span class="music-emoji">🎧</span>
-                            What I'm listening to
-                        </h3>
-                        <ul class="music-list">
-                            <li>zombie pop - DPR IAN</li>
-                        </ul>
-                    </div>
+                </div>
+
+                <div class="music-content">
+                    <h3 class="music-title">
+                        <span class="music-emoji">🎧</span>
+                        What I'm listening to
+                    </h3>
+                    <ul class="music-list">
+                        <li data-song="zombie-pop">zombie pop - DPR IAN</li> </ul>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Pics Section -->
     <section id="photo-collage">
