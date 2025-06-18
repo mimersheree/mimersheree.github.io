@@ -1,24 +1,84 @@
-function toggleMenu() { 
+let projectCards;
+let projectObserver;
+
+function toggleMenu() {
     const menu = document.querySelector(".menu-links");
     const icon = document.querySelector(".hamburger-icon");
-    menu.classList.toggle("open")
-    icon.classList.toggle("open") // Opens and closes hamburger icon menu 
+    menu.classList.toggle("open");
+    icon.classList.toggle("open"); // Opens and closes hamburger icon menu
 }
 
-// Scroll up button 
+// Project card transitions
+function restartProjectCardsTransition() {
+    if (projectCards && projectObserver) {
+        projectCards.forEach(card => {
+            projectObserver.unobserve(card);
+            card.classList.remove('is-visible');
+            card.style.removeProperty('--animation-delay');
+            card.offsetHeight;
+        });
+
+        requestAnimationFrame(() => {
+            setTimeout(() => {
+                projectCards.forEach(card => {
+                    projectObserver.observe(card);
+                });
+            }, 50);
+        });
+    }
+}
+
+// Scroll up button
 const scrollBtn = document.getElementById('scrollUpBtn');
+let isAtTop = true; 
+let hasTriggeredRestart = false; 
+
 window.addEventListener('scroll', () => {
-  if (window.scrollY > window.innerHeight / 2) {
-    scrollBtn.classList.add('show');
-  } else {
-    scrollBtn.classList.remove('show');
-  }
+    const scrollY = window.scrollY;
+    const threshold = window.innerHeight / 2;
+
+    if (scrollY > threshold) {
+        scrollBtn.classList.add('show');
+    } else {
+        scrollBtn.classList.remove('show');
+    }
+
+    if (scrollY <= 10 && !isAtTop && !hasTriggeredRestart) { 
+        isAtTop = true;
+        hasTriggeredRestart = true;
+
+        setTimeout(() => {
+            restartProjectCardsTransition();
+        }, 100);
+
+        setTimeout(() => {
+            hasTriggeredRestart = false;
+        }, 1500);
+    } else if (scrollY > 100) { 
+        isAtTop = false;
+    }
 });
 
 scrollBtn.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    setTimeout(() => {
+        restartProjectCardsTransition();
+    }, 800); s
 });
 
+let scrollTimeout;
+function handleScrollEnd() {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+        if (window.scrollY === 0) {
+            restartProjectCardsTransition();
+        }
+    }, 150);
+}
+
+
+// Bubble animations 
 document.addEventListener('DOMContentLoaded', function() {
     const bubbles = document.querySelectorAll('.bubble');
     const heroSection = document.querySelector('.hero');
@@ -254,3 +314,78 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
         });
+
+       // Project cards 
+document.addEventListener('DOMContentLoaded', function() {
+    projectCards = document.querySelectorAll('.project'); 
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.2
+    };
+
+    projectObserver = new IntersectionObserver((entries, observer) => { 
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    projectCards.forEach(card => {
+        projectObserver.observe(card);
+    });
+});
+
+    // Chatbot
+ document.addEventListener('DOMContentLoaded', function() {
+    const chatbotContainer = document.querySelector('.chatbot-avatar-container');
+    const chatbotBubble = chatbotContainer ? chatbotContainer.querySelector('.chatbot-bubble') : null;
+    const chatbotAvatar = chatbotContainer ? chatbotContainer.querySelector('.chatbot-avatar') : null;  
+
+    const prompts = [
+        "hi, hello! ✨",
+        "how are ya? ( ˵ •̀ ᴗ •́˵)",
+        "have a great day! 🐰",
+        "smile! because it's worth it 😄",
+        "did you drink water today? ₍ᐢ. ̫ .ᐢ₎",
+        "thanks for coming! ⸜(｡˃ ᵕ ˂ )⸝",
+        "just a lil bun cheering you on 🍓",
+        "hope you're having a great time! 🫶🏻"
+    ];
+
+    if (chatbotContainer && chatbotBubble && chatbotAvatar) { 
+        let lastPromptIndex = -1; 
+
+        function getRandomPrompt() {
+            let randomIndex;
+            do {
+                randomIndex = Math.floor(Math.random() * prompts.length);
+            } while (randomIndex === lastPromptIndex && prompts.length > 1);
+            lastPromptIndex = randomIndex;
+            return prompts[randomIndex];
+        }
+
+        chatbotContainer.addEventListener('mouseenter', function() {
+            if (chatbotBubble.textContent === '') { 
+                chatbotBubble.textContent = getRandomPrompt();
+            }
+        });
+
+        chatbotContainer.addEventListener('click', function() {
+            chatbotBubble.textContent = getRandomPrompt();
+            chatbotBubble.style.opacity = '1';
+            chatbotBubble.style.visibility = 'visible';
+
+             chatbotAvatar.classList.remove('bounce-animation');  
+            void chatbotAvatar.offsetWidth;  
+            chatbotAvatar.classList.add('bounce-animation');  
+        });
+
+        chatbotAvatar.addEventListener('animationend', () => {
+            chatbotAvatar.classList.remove('bounce-animation');
+        });
+    }
+});

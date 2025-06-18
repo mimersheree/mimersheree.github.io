@@ -415,7 +415,7 @@ nav, #desktop-nav {
 
 /* PROJECTS SECTION */
 .project {
-    margin: 4rem 0;
+    margin: 6rem 0;
     text-decoration: none;
     color: inherit;
     display: block;
@@ -427,13 +427,24 @@ nav, #desktop-nav {
     backdrop-filter: blur(10px);
     border: 1px solid #ffc7d033;
     cursor: pointer;
+    opacity: 0;
+    transform: translateY(50px);  
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 @supports not (backdrop-filter: blur(10px)) {
     .project {
         background: rgba(255, 255, 255, 0.9);
         box-shadow: 0 4px 20px rgba(255, 105, 180, 0.08);
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease;
     }
+}
+
+.project.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .project:hover {
@@ -611,8 +622,6 @@ nav, #desktop-nav {
     display: block;
 }
 
-
-
 .case-study-img:hover, .case-study-gif:hover {
     transform: none;
     box-shadow: 0 20px 40px rgba(255, 105, 180, 0.15);
@@ -625,7 +634,6 @@ nav, #desktop-nav {
     color: var(--text);
 }
 
-/* Large case study images */
 .case-study-img {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
@@ -656,6 +664,8 @@ nav, #desktop-nav {
 #about {
     padding: 6rem 2rem;
     background: var(--bg-color);
+    position: relative;
+    padding-bottom: 8rem;
 }
 
 .section__text__p1 {
@@ -787,6 +797,121 @@ nav, #desktop-nav {
     font-weight: 600;
 }
 
+/* CHATBOT SECTION */
+.chatbot-avatar-container {
+    position: absolute;
+    right: 2rem; 
+    bottom: 2rem; 
+    cursor: pointer;
+    z-index: 10;
+    pointer-events: auto;
+}
+.chatbot-avatar {
+    width: 50px; 
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+    background-color: transparent; 
+    border-radius: 50%; 
+    padding: 0; 
+}
+
+.chatbot-avatar:hover {
+    transform: scale(1.1);
+}
+
+.chatbot-bubble {
+    position: absolute;
+    background-color: var(--main);
+    color: var(--text);
+    border: 1px solid var(--pink-accent);
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    bottom: calc(100% + 10px);  
+    left: auto;
+    right: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+}
+
+.chatbot-avatar-container:hover .chatbot-bubble {
+    opacity: 1;
+    visibility: visible;
+}
+
+@keyframes bounce {
+  0%, 100% {
+        transform: translateY(0) scale(1.1); 
+    }
+    10% { 
+        transform: translateY(-4px) scale(1.12);
+    }
+    20% { 
+        transform: translateY(0) scale(1.1);
+    }
+    30% { 
+        transform: translateY(-3px) scale(1.11);
+    }
+    40% {
+        transform: translateY(0) scale(1.1);
+    }
+    
+    60% {
+        transform: translateY(0) scale(1.1);
+    }
+}
+
+.chatbot-avatar.bounce-animation {
+    animation: bounce 0.8s ease-out;  
+}
+
+@media (max-width: 900px) { 
+    .chatbot-avatar-container {
+        right: 1.5rem; 
+        bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .chatbot-avatar-container {
+        right: 1.5rem;  
+        bottom: 1.5rem;
+    }
+    .chatbot-bubble {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+        bottom: calc(100% + 5px);
+    }
+}
+
+@media (max-width: 600px) {
+    .chatbot-avatar-container {
+        right: 1rem; 
+        bottom: 1rem;
+    }
+    .chatbot-avatar {
+        width: 40px;
+    }
+    .chatbot-bubble {
+        font-size: 0.65rem; 
+        padding: 3px 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chatbot-avatar-container {
+        right: 0.5rem; 
+        bottom: 0.5rem;
+    }
+    .chatbot-avatar {
+        width: 35px;  
+    }
+}
 /* SKILLS SECTION */
 #skills {
     padding: 6rem 2rem;
@@ -1238,7 +1363,7 @@ nav, #desktop-nav {
     font-size: 2.25rem;
     font-weight: 600;
     color: var(--clean-purple);
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 1rem 0;
     line-height: 1.2;
     display: flex;
     align-items: center;
@@ -1258,7 +1383,7 @@ nav, #desktop-nav {
     font-size: 1.05rem;
     color: var(--text80);
     margin: 0 0 1.5rem 0;
-    line-height: 1.6;
+    line-height: 2.0;
     text-align: left;
 }
 
@@ -1305,9 +1430,9 @@ font-style: normal;
 
 .footer-copyright {
     font-family: 'Lato', sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: var(--text50);
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;
     text-align: left;
 }
 
