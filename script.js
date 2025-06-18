@@ -5,6 +5,7 @@ function toggleMenu() {
     icon.classList.toggle("open") // Opens and closes hamburger icon menu 
 }
 
+// Scroll up button 
 const scrollBtn = document.getElementById('scrollUpBtn');
 window.addEventListener('scroll', () => {
   if (window.scrollY > window.innerHeight / 2) {
@@ -204,3 +205,52 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, 15000); 
 });
+
+    // Cursor interactions 
+     document.addEventListener('DOMContentLoaded', function() {
+            const customCursor = document.getElementById('customCursor');
+            const projects = document.querySelectorAll('.project');
+            let isOverProject = false;
+            
+            document.addEventListener('mousemove', function(e) {
+                customCursor.style.left = e.clientX + 'px';
+                customCursor.style.top = e.clientY + 'px';
+            });
+            
+            projects.forEach(project => {
+                project.addEventListener('mouseenter', function() {
+                    isOverProject = true;
+                    customCursor.classList.add('active');
+                    document.body.style.cursor = 'none';
+                });
+                
+                project.addEventListener('mouseleave', function() {
+                    isOverProject = false;
+                    customCursor.classList.remove('active');
+                    document.body.style.cursor = 'default';
+                });
+            });
+            
+            document.addEventListener('mouseleave', function() {
+                customCursor.classList.remove('active');
+                document.body.style.cursor = 'default';
+            });
+            
+            document.addEventListener('mouseenter', function() {
+                if (isOverProject) {
+                    customCursor.classList.add('active');
+                    document.body.style.cursor = 'none';
+                }
+            });
+            
+            projects.forEach(project => {
+                project.addEventListener('click', function() {
+                    customCursor.style.transform = 'translate(-50%, -50%) scale(1.2)';
+                    setTimeout(() => {
+                        customCursor.style.transform = 'translate(-50%, -50%) scale(1)';
+                    }, 150);
+                    
+                    console.log('Project clicked:', this.querySelector('h3').textContent);
+                });
+            });
+        });
