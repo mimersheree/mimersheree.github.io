@@ -1225,7 +1225,6 @@ nav, #desktop-nav {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); 
-    background-color: rgba(240, 240, 240, 0.9); 
     border: none;
     border-radius: 50%;
     width: 80px; 
@@ -1251,7 +1250,7 @@ nav, #desktop-nav {
     height: 0;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-left: 25px solid #333; 
+    border-left: 25px solid var(--text); 
     margin-left: 3px; 
     margin-bottom: 5px; 
 }
@@ -1260,7 +1259,7 @@ nav, #desktop-nav {
     font-family: 'Lato', sans-serif; 
     font-size: 0.8rem;
     font-weight: 700;
-    color: #333; 
+    color: var(--text); 
     text-transform: uppercase;
 }
 
