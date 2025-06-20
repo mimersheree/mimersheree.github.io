@@ -37,7 +37,6 @@
     --orb-shadow-dark: 0 0 15px rgba(255, 255, 255, 0.7), 0 0 30px rgba(255, 255, 255, 0.5);
 }
 
-/* Base styles for dark mode */
 body.dark-theme {
     background: var(--dark-bg-color);
     color: var(--dark-text);
@@ -169,9 +168,9 @@ body.dark-theme .custom-cursor {
     background: var(--orb-gradient-dark);
     box-shadow: var(--orb-shadow-dark);
     filter: blur(8px);
-    opacity: 1; /* Always visible in dark mode when active/mouse moves */
-    visibility: visible; /* Always visible in dark mode when active/mouse moves */
-    -webkit-backdrop-filter: none; /* Remove backdrop-filter in dark mode if it conflicts with blur effect */
+    opacity: 1;  
+    visibility: visible;  
+    -webkit-backdrop-filter: none;  
     backdrop-filter: none;
 }
 
@@ -183,7 +182,6 @@ body.dark-theme .custom-cursor {
     box-shadow: var(--orb-shadow-dark); 
     filter: blur(8px); 
 }
-
 
 body.dark-theme .custom-cursor::before,
 body.dark-theme .custom-cursor::after {
@@ -230,6 +228,10 @@ body.dark-theme .play-icon-text {
 
 body.dark-theme #skills {
     background: rgba(0, 0, 0, 0.2);
+}
+
+body.dark-theme #desktop-nav{
+    background: var(--dark-main);
 }
 
 body.dark-theme .skills-content-wrapper {
