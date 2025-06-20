@@ -20,7 +20,8 @@
 
     /* DARK MODE */
     --dark-main: #2f2f2f; 
-    --dark-bg-color: #121212; 
+    --dark-bg-color:  #1a1a1a; 
+    --dark-bg-color-rgb: 26, 26, 26;
     --dark-text: #e0e0e0; 
     --dark-text80: #cccccc;
     --dark-text50: rgba(224, 224, 224, 0.5);
@@ -40,7 +41,38 @@
 body.dark-theme {
     background: var(--dark-bg-color);
     color: var(--dark-text);
-    transition: ease-in-out background 400ms, color 400ms; /* Smooth transition for dark mode */
+    transition: ease-in-out background 400ms, color 400ms; 
+}
+
+body.dark-theme #work,
+body.dark-theme #skills,
+body.dark-theme #music,
+body.dark-theme #photo-collage,
+body.dark-theme #about {  
+    background: var(--dark-section-bg);  
+    transition: background 400ms ease;  
+}
+
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4,
+body.dark-theme h5 {
+    color: var(--dark-text); 
+}
+
+body.dark-theme #work h1.faint {
+    color: var(--dark-text80);  
+}
+body.dark-theme #about .title {  
+    color: var(--dark-text);
+}
+body.dark-theme #photo-collage .title {  
+    color: var(--dark-text);
+}
+
+body.dark-theme #about .section__text__p1 {  
+    color: var(--dark-text);
 }
 
 body.dark-theme nav {
@@ -68,6 +100,15 @@ body.dark-theme .hamburger-icon span {
 
 body.dark-theme .hero {
     background: linear-gradient(135deg, var(--dark-bg-color) 0%, #222222 100%);
+}
+
+body.dark-theme .hero-bg::before,
+body.dark-theme .hero-bg::after {
+    background: radial-gradient(50% 50% at 50% 50%,
+            rgba(255, 105, 180, 0.15) 0%,
+            rgba(255, 182, 193, 0.08) 25%,
+            rgba(60, 60, 60, 0.05) 50%,  
+            transparent 100%);
 }
 
 body.dark-theme .header h1,
@@ -104,15 +145,45 @@ body.dark-theme .tag {
 }
 
 /* Custom cursor orb effect */
+.custom-cursor {
+    opacity: 0; 
+    visibility: hidden; 
+    transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                background 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;  
+}
+
+.custom-cursor.active {
+    opacity: 1;  
+    visibility: visible; 
+    transform: translate(-50%, -50%) scale(1);  
+}
+
+/* Dark mode divider adjustment */
+body.dark-theme .divider {
+    border-bottom: 1px solid var(--dark-divider);
+}
+
+/* Dark mode cursor orb effect */
+body.dark-theme .custom-cursor {
+    background: var(--orb-gradient-dark);
+    box-shadow: var(--orb-shadow-dark);
+    filter: blur(8px);
+    opacity: 1; /* Always visible in dark mode when active/mouse moves */
+    visibility: visible; /* Always visible in dark mode when active/mouse moves */
+    -webkit-backdrop-filter: none; /* Remove backdrop-filter in dark mode if it conflicts with blur effect */
+    backdrop-filter: none;
+}
+
+body.dark-theme .custom-cursor.active {
+    transform: translate(-50%, -50%) scale(1.2); 
+}
 body.dark-theme .custom-cursor {
     background: var(--orb-gradient-dark); 
     box-shadow: var(--orb-shadow-dark); 
     filter: blur(8px); 
 }
 
-body.dark-theme .custom-cursor.active {
-    transform: translate(-50%, -50%) scale(1.2); 
-}
 
 body.dark-theme .custom-cursor::before,
 body.dark-theme .custom-cursor::after {
