@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mimi Pomephimkham - Loading</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --main: #fff;
+            --bg-color: #fefbff;   
+            --text: #6e6c75cc;    
+            --text80: #6e6c75cc;     
+            --text50: rgba(45, 27, 105, 0.5);      
+            --text4: rgba(45, 27, 105, 0.3);       
+            --bg1: rgba(255, 182, 193, 0.15);       
+            --bg2: rgba(255, 182, 193, 0.08);      
+            --text20: rgba(45, 27, 105, 0.2);
+            --pink-accent: #ff69b4;
+            --soft-pink: #ffb6c1;
+            --lavender: #e6e6fa;
+            --clean-blue: #2f2f2f;
+            --clean-purple: #2f2f2f;
+            --clean-black: #2f2f2f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: var(--bg-color);
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Animated background particles */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--soft-pink);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 20%; animation-delay: 1s; }
+        .particle:nth-child(3) { left: 30%; animation-delay: 2s; }
+        .particle:nth-child(4) { left: 40%; animation-delay: 1.5s; }
+        .particle:nth-child(5) { left: 50%; animation-delay: 0.5s; }
+        .particle:nth-child(6) { left: 60%; animation-delay: 2.5s; }
+        .particle:nth-child(7) { left: 70%; animation-delay: 1.8s; }
+        .particle:nth-child(8) { left: 80%; animation-delay: 0.8s; }
+        .particle:nth-child(9) { left: 90%; animation-delay: 2.2s; }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(-10vh) rotate(180deg);
+                opacity: 1;
+            }
+        }
+
+        /* Main container */
+        .transition-container {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            animation: containerFadeIn 1s ease-out;
+        }
+
+        @keyframes containerFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Logo container */
+        .logo-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        /* MP Logo styling */
+        .logo {
+            font-size: 8rem;
+            font-weight: 900;
+            color: var(--clean-black);
+            letter-spacing: -0.1em;
+            position: relative;
+            animation: logoKinetic 3s ease-in-out infinite;
+            text-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+        }
+
+        @keyframes logoKinetic {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+                filter: hue-rotate(0deg);
+            }
+            25% {
+                transform: scale(1.05) rotate(1deg);
+                filter: hue-rotate(10deg);
+            }
+            50% {
+                transform: scale(0.98) rotate(-1deg);
+                filter: hue-rotate(20deg);
+            }
+            75% {
+                transform: scale(1.02) rotate(0.5deg);
+                filter: hue-rotate(10deg);
+            }
+        }
+
+        /* Rotating rings around logo */
+        .ring {
+            position: absolute;
+            border: 2px solid var(--soft-pink);
+            border-radius: 50%;
+            opacity: 0.4;
+        }
+
+        .ring-1 {
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: rotate 8s linear infinite;
+            border-color: var(--pink-accent);
+        }
+
+        .ring-2 {
+            width: 250px;
+            height: 250px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: rotate 12s linear infinite reverse;
+            border-color: var(--lavender);
+        }
+
+        .ring-3 {
+            width: 300px;
+            height: 300px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: rotate 15s linear infinite;
+            border-color: var(--soft-pink);
+            opacity: 0.2;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        /* Loading text */
+        .loading-text {
+            font-size: 1.2rem;
+            color: var(--text);
+            font-weight: 300;
+            margin-bottom: 1rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.6;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* Progress bar */
+        .progress-container {
+            width: 200px;
+            height: 4px;
+            background: var(--bg2);
+            border-radius: 10px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--pink-accent), var(--soft-pink));
+            border-radius: 10px;
+            width: 0%;
+            animation: progressFill 3s ease-in-out forwards;
+        }
+
+        @keyframes progressFill {
+            to {
+                width: 100%;
+            }
+        }
+
+        /* Sparkle effects */
+        .sparkle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: var(--pink-accent);
+            border-radius: 50%;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+
+        .sparkle:nth-child(1) {
+            top: 20%;
+            left: 15%;
+            animation-delay: 0.5s;
+        }
+
+        .sparkle:nth-child(2) {
+            top: 30%;
+            right: 20%;
+            animation-delay: 1s;
+        }
+
+        .sparkle:nth-child(3) {
+            bottom: 25%;
+            left: 25%;
+            animation-delay: 1.5s;
+        }
+
+        .sparkle:nth-child(4) {
+            bottom: 35%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Fade out animation */
+        .fade-out {
+            animation: fadeOut 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                transform: scale(1.1);
+            }
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 6rem;
+            }
+            
+            .ring-1 {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .ring-2 {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .ring-3 {
+                width: 210px;
+                height: 210px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 4rem;
+            }
+            
+            .ring-1 {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .ring-2 {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .ring-3 {
+                width: 160px;
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated background particles -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Sparkle effects -->
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+
+    <!-- Main transition container -->
+    <div class="transition-container" id="transitionContainer">
+        <div class="logo-container">
+            <!-- Rotating rings -->
+            <div class="ring ring-1"></div>
+            <div class="ring ring-2"></div>
+            <div class="ring ring-3"></div>
+            
+            <!-- MP Logo -->
+            <div class="logo">MP</div>
+        </div>
+        
+        <div class="loading-text">Welcome to Mimi's Portfolio</div>
+        
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+
+    <script>
+        // Auto-redirect to index page after animation completes
+        setTimeout(() => {
+            const container = document.getElementById('transitionContainer');
+            container.classList.add('fade-out');
+            
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 1000);
+        }, 3500);
+
+        // Optional: Click to skip animation
+        document.addEventListener('click', () => {
+            const container = document.getElementById('transitionContainer');
+            container.classList.add('fade-out');
+            
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 500);
+        });
+
+        // Add some dynamic particle generation
+        function createDynamicParticles() {
+            const particles = document.querySelector('.particles');
+            
+            setInterval(() => {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                particle.style.background = Math.random() > 0.5 ? 'var(--soft-pink)' : 'var(--lavender)';
+                
+                particles.appendChild(particle);
+                
+                setTimeout(() => {
+                    particle.remove();
+                }, 8000);
+            }, 800);
+        }
+
+        // Start dynamic particles after initial load
+        setTimeout(createDynamicParticles, 1000);
+    </script>
+</body>
+</html>

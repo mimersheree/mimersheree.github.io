@@ -448,3 +448,45 @@ if (themeToggle) {
         setTheme(themeToggle.checked);
     });
 }
+
+// transition 
+ setTimeout(() => {
+            const container = document.getElementById('transitionContainer');
+            container.classList.add('fade-out');
+            
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 1000);
+        }, 3500);
+
+        // Optional: Click to skip animation
+        document.addEventListener('click', () => {
+            const container = document.getElementById('transitionContainer');
+            container.classList.add('fade-out');
+            
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 500);
+        });
+
+        // Add some dynamic particle generation
+        function createDynamicParticles() {
+            const particles = document.querySelector('.particles');
+            
+            setInterval(() => {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                particle.style.background = Math.random() > 0.5 ? 'var(--soft-pink)' : 'var(--lavender)';
+                
+                particles.appendChild(particle);
+                
+                setTimeout(() => {
+                    particle.remove();
+                }, 8000);
+            }, 800);
+        }
+
+        // Start dynamic particles after initial load
+        setTimeout(createDynamicParticles, 1000);
