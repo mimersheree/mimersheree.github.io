@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;800;900&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
     font-size: 16px;
@@ -430,12 +430,12 @@ body {
     padding: 0;
     background: var(--bg-color);
     color: var(--text);
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 /* TYPOGRAPHY */
 h1 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     font-size: 88px;
     font-style: normal;
@@ -448,7 +448,7 @@ h1 {
 }
 
 h5 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 2.5rem;
     font-style: normal;
     font-weight: 400;
@@ -459,7 +459,7 @@ h5 {
 }
 
 h2 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 2.5rem;
     font-style: normal;
     font-weight: 700;
@@ -475,7 +475,7 @@ h2 {
 }
 
 h3 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 1.25rem;
     margin: 1rem 0;
@@ -483,7 +483,7 @@ h3 {
 }
 
 h4 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 600;
     font-size: 1.25rem;
     margin: .5rem 0;
@@ -492,7 +492,7 @@ h4 {
 }
 
 p {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 16px;
     margin: 0;
@@ -506,7 +506,7 @@ p {
 }
 
 .callout {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 600;
     font-size: 1.5rem;
     margin: 0 0 1rem 0;
@@ -584,7 +584,7 @@ nav, #desktop-nav {
 }
 
 .title-name, .logo {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--clean-black);
@@ -630,7 +630,7 @@ nav, #desktop-nav {
 }
 
 .nav-links a {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1rem;
     font-weight: 600;
     color: var(--text50);
@@ -754,7 +754,7 @@ nav, #desktop-nav {
 /* WORK SECTION */
 #work {
     padding: 6rem 2rem;
-    background: var(--bg-color);
+    background: rgba(248, 240, 255, 0.3);
 }
 
 .project-list {
@@ -818,7 +818,7 @@ nav, #desktop-nav {
 }
 
 .cursor-text {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-weight: 700;
     color: white;
@@ -1057,7 +1057,7 @@ nav, #desktop-nav {
 #contact-and-footer {
     background-color: var(--bg-color);
     padding: 6rem 2rem;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
     color: var(--text);
 }
 
@@ -1134,7 +1134,7 @@ nav, #desktop-nav {
     width: 100%;
     border-radius: 2rem;
     box-shadow: 0 20px 40px rgba(255, 105, 180, 0.15);
-    transition: all 0.3s ease !important; 
+    transition: transform 0.5s ease-out, box-shadow 0.5s ease-out; 
     cursor: pointer; 
 }
 
@@ -1290,7 +1290,7 @@ nav, #desktop-nav {
     left: auto;
     right: 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-style: normal;
 }
 
@@ -1439,7 +1439,7 @@ nav, #desktop-nav {
 }
 
 .skills-category {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 2rem;
     font-weight: 700;
     color: var(--clean-black);
@@ -1462,7 +1462,7 @@ nav, #desktop-nav {
 }
 
 .skills-list li {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     color: var(--text80);
@@ -1711,7 +1711,7 @@ nav, #desktop-nav {
 }
 
 .play-icon-text {
-    font-family: 'Lato', sans-serif; 
+    font-family: 'Inter', sans-serif; 
     font-size: 0.8rem;
     font-weight: 700;
     color: var(--text); 
@@ -1754,7 +1754,7 @@ nav, #desktop-nav {
     align-items: center;
     color: var(--clean-black);
     display: flex;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 2rem;
     font-weight: 700;
     gap: 0.75rem;
@@ -1775,7 +1775,7 @@ nav, #desktop-nav {
 
 .music-list li {
     color: var(--text80);
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1.1rem;
     font-weight: 500;
     line-height: 1.8;
@@ -1869,9 +1869,9 @@ nav, #desktop-nav {
 
 /* CONTACT AND FOOTER SECTION */
 #contact-and-footer {
-    background-color: var(--bg-color);
+    background-color: rgba(248, 240, 255, 0.3);
     padding: 6rem 2rem;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
     color: var(--text);
 }
 
@@ -1896,7 +1896,7 @@ nav, #desktop-nav {
 }
 
 .footer-heading-logo {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 2.25rem;
     font-weight: 600;
     color: var(--clean-purple);
@@ -1916,7 +1916,7 @@ nav, #desktop-nav {
 }
 
 .footer-tagline {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1.05rem;
     color: var(--text80);
     margin: 0 0 1.5rem 0;
@@ -1925,7 +1925,7 @@ nav, #desktop-nav {
 }
 
 .footer-subheading {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--clean-blue);
@@ -1947,7 +1947,7 @@ nav, #desktop-nav {
 }
 
 .footer-links a {
-font-family: 'Lato', sans-serif;
+font-family: 'Inter', sans-serif;
 font-size: 1rem;
 font-weight: 600; 
 color: var(--text50); 
@@ -1966,7 +1966,7 @@ font-style: normal;
 }
 
 .footer-copyright {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 0.8rem;
     color: var(--text50);
     margin-top: 1.5rem;
