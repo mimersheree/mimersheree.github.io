@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mimi Pomephimkham - Loading</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Loading...</title>
     <style>
         :root {
+            font-size: 16px;
             --main: #fff;
             --bg-color: #fefbff;   
             --text: #6e6c75cc;    
@@ -23,6 +22,17 @@
             --clean-blue: #2f2f2f;
             --clean-purple: #2f2f2f;
             --clean-black: #2f2f2f;
+
+            /* DARK MODE */
+            --dark-main: #2f2f2f; 
+            --dark-bg-color: #1a1a1a; 
+            --dark-bg-color-rgb: 26, 26, 26;
+            --dark-text: #e0e0e0; 
+            --dark-text80: #cccccc;
+            --dark-text50: rgba(224, 224, 224, 0.5);
+            --dark-text20: rgba(224, 224, 224, 0.2);
+            --dark-bg1: rgba(255, 105, 180, 0.1); 
+            --dark-bg2: rgba(255, 105, 180, 0.05);
         }
 
         * {
@@ -32,8 +42,9 @@
         }
 
         body {
-            font-family: 'Lato', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: var(--bg-color);
+            color: var(--text);
             overflow: hidden;
             height: 100vh;
             display: flex;
@@ -42,163 +53,99 @@
             position: relative;
         }
 
-        /* Animated background particles */
-        .particles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 1;
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
         }
 
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--soft-pink);
-            border-radius: 50%;
-            opacity: 0.6;
-            animation: float 6s infinite ease-in-out;
-        }
-
-        .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
-        .particle:nth-child(2) { left: 20%; animation-delay: 1s; }
-        .particle:nth-child(3) { left: 30%; animation-delay: 2s; }
-        .particle:nth-child(4) { left: 40%; animation-delay: 1.5s; }
-        .particle:nth-child(5) { left: 50%; animation-delay: 0.5s; }
-        .particle:nth-child(6) { left: 60%; animation-delay: 2.5s; }
-        .particle:nth-child(7) { left: 70%; animation-delay: 1.8s; }
-        .particle:nth-child(8) { left: 80%; animation-delay: 0.8s; }
-        .particle:nth-child(9) { left: 90%; animation-delay: 2.2s; }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.6;
-            }
-            90% {
-                opacity: 0.6;
-            }
-            50% {
-                transform: translateY(-10vh) rotate(180deg);
-                opacity: 1;
-            }
-        }
-
-        /* Main container */
-        .transition-container {
+        .circle-container {
             position: relative;
-            z-index: 10;
-            text-align: center;
-            animation: containerFadeIn 1s ease-out;
-        }
-
-        @keyframes containerFadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Logo container */
-        .logo-container {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 2rem;
-        }
-
-        /* MP Logo styling */
-        .logo {
-            font-size: 8rem;
-            font-weight: 900;
-            color: var(--clean-black);
-            letter-spacing: -0.1em;
-            position: relative;
-            animation: logoKinetic 3s ease-in-out infinite;
-            text-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
-        }
-
-        @keyframes logoKinetic {
-            0%, 100% {
-                transform: scale(1) rotate(0deg);
-                filter: hue-rotate(0deg);
-            }
-            25% {
-                transform: scale(1.05) rotate(1deg);
-                filter: hue-rotate(10deg);
-            }
-            50% {
-                transform: scale(0.98) rotate(-1deg);
-                filter: hue-rotate(20deg);
-            }
-            75% {
-                transform: scale(1.02) rotate(0.5deg);
-                filter: hue-rotate(10deg);
-            }
-        }
-
-        /* Rotating rings around logo */
-        .ring {
-            position: absolute;
-            border: 2px solid var(--soft-pink);
-            border-radius: 50%;
-            opacity: 0.4;
-        }
-
-        .ring-1 {
-            width: 200px;
-            height: 200px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: rotate 8s linear infinite;
-            border-color: var(--pink-accent);
-        }
-
-        .ring-2 {
-            width: 250px;
-            height: 250px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: rotate 12s linear infinite reverse;
-            border-color: var(--lavender);
-        }
-
-        .ring-3 {
             width: 300px;
             height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .breathing-circle {
+            width: 280px;
+            height: 280px;
+            border: 2px solid var(--soft-pink);
+            border-radius: 50%;
+            position: relative;
+            animation: breathe 4s ease-in-out infinite;
+        }
+
+        .inner-circle {
+            position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            animation: rotate 15s linear infinite;
-            border-color: var(--soft-pink);
-            opacity: 0.2;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, var(--bg1), var(--bg2));
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--text20);
         }
 
-        @keyframes rotate {
+        .percentage {
+            font-size: 3rem;
+            font-weight: 300;
+            color: var(--pink-accent);
+            text-align: center;
+            letter-spacing: 0.1em;
+            font-family: 'Courier New', monospace;
+        }
+
+        .loading-text {
+            font-size: 1.1rem;
+            color: var(--text80);
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            opacity: 0.8;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .moving-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: var(--pink-accent);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform-origin: 0 140px;
+            animation: rotateDot 5s linear forwards;
+            filter: drop-shadow(0 0 8px rgba(255, 105, 180, 0.6));
+            box-shadow: 0 0 12px rgba(255, 105, 180, 0.4);
+        }
+
+        @keyframes breathe {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            50% { 
+                transform: scale(1.1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes rotateDot {
             from {
-                transform: translate(-50%, -50%) rotate(0deg);
+                transform: rotate(-90deg) translate(140px) rotate(90deg);
             }
             to {
-                transform: translate(-50%, -50%) rotate(360deg);
+                transform: rotate(270deg) translate(140px) rotate(-270deg);
             }
-        }
-
-        /* Loading text */
-        .loading-text {
-            font-size: 1.2rem;
-            color: var(--text);
-            font-weight: 300;
-            margin-bottom: 1rem;
-            animation: pulse 2s ease-in-out infinite;
         }
 
         @keyframes pulse {
@@ -210,213 +157,106 @@
             }
         }
 
-        /* Progress bar */
-        .progress-container {
-            width: 200px;
-            height: 4px;
-            background: var(--bg2);
-            border-radius: 10px;
-            margin: 0 auto;
-            overflow: hidden;
-            position: relative;
+        .dots {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
         }
 
-        .progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, var(--pink-accent), var(--soft-pink));
-            border-radius: 10px;
-            width: 0%;
-            animation: progressFill 3s ease-in-out forwards;
-        }
-
-        @keyframes progressFill {
-            to {
-                width: 100%;
-            }
-        }
-
-        /* Sparkle effects */
-        .sparkle {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background: var(--pink-accent);
+        .dot {
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
-            animation: sparkle 2s ease-in-out infinite;
+            background: var(--soft-pink);
+            opacity: 0.3;
+            animation: dotPulse 1.5s ease-in-out infinite;
         }
 
-        .sparkle:nth-child(1) {
-            top: 20%;
-            left: 15%;
-            animation-delay: 0.5s;
-        }
+        .dot:nth-child(1) { animation-delay: 0s; }
+        .dot:nth-child(2) { animation-delay: 0.2s; }
+        .dot:nth-child(3) { animation-delay: 0.4s; }
 
-        .sparkle:nth-child(2) {
-            top: 30%;
-            right: 20%;
-            animation-delay: 1s;
-        }
-
-        .sparkle:nth-child(3) {
-            bottom: 25%;
-            left: 25%;
-            animation-delay: 1.5s;
-        }
-
-        .sparkle:nth-child(4) {
-            bottom: 35%;
-            right: 15%;
-            animation-delay: 2s;
-        }
-
-        @keyframes sparkle {
+        @keyframes dotPulse {
             0%, 100% {
-                opacity: 0;
-                transform: scale(0);
+                opacity: 0.3;
+                transform: scale(1);
             }
             50% {
                 opacity: 1;
-                transform: scale(1);
+                transform: scale(1.2);
             }
         }
 
-        /* Fade out animation */
-        .fade-out {
-            animation: fadeOut 1s ease-in-out forwards;
-        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: var(--dark-bg-color);
+                color: var(--dark-text);
+            }
 
-        @keyframes fadeOut {
-            to {
-                opacity: 0;
-                transform: scale(1.1);
+            .breathing-circle {
+                border-color: var(--pink-accent);
             }
-        }
 
-        /* Mobile responsiveness */
-        @media (max-width: 768px) {
-            .logo {
-                font-size: 6rem;
+            .inner-circle {
+                background: linear-gradient(135deg, var(--dark-bg1), var(--dark-bg2));
+                border-color: var(--dark-text20);
             }
-            
-            .ring-1 {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .ring-2 {
-                width: 180px;
-                height: 180px;
-            }
-            
-            .ring-3 {
-                width: 210px;
-                height: 210px;
-            }
-        }
 
-        @media (max-width: 480px) {
-            .logo {
-                font-size: 4rem;
-            }
-            
-            .ring-1 {
-                width: 120px;
-                height: 120px;
-            }
-            
-            .ring-2 {
-                width: 140px;
-                height: 140px;
-            }
-            
-            .ring-3 {
-                width: 160px;
-                height: 160px;
+            .loading-text {
+                color: var(--dark-text80);
             }
         }
     </style>
 </head>
 <body>
-    <!-- Animated background particles -->
-    <div class="particles">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-    </div>
-
-    <!-- Sparkle effects -->
-    <div class="sparkle"></div>
-    <div class="sparkle"></div>
-    <div class="sparkle"></div>
-    <div class="sparkle"></div>
-
-    <!-- Main transition container -->
-    <div class="transition-container" id="transitionContainer">
-        <div class="logo-container">
-            <!-- Rotating rings -->
-            <div class="ring ring-1"></div>
-            <div class="ring ring-2"></div>
-            <div class="ring ring-3"></div>
-            
-            <!-- MP Logo -->
-            <div class="logo">MP</div>
+    <div class="loading-container">
+        <div class="circle-container">
+            <div class="breathing-circle">
+                <div class="moving-dot"></div>
+                <div class="inner-circle">
+                    <div class="percentage" id="percentage">0%</div>
+                </div>
+            </div>
         </div>
-        
-        <div class="loading-text">Welcome to Mimi's Portfolio</div>
-        
-        <div class="progress-container">
-            <div class="progress-bar"></div>
+        <div class="loading-text">
+            Loading
+            <div class="dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
         </div>
     </div>
 
     <script>
-        // Auto-redirect to index page after animation completes
-        setTimeout(() => {
-            const container = document.getElementById('transitionContainer');
-            container.classList.add('fade-out');
+        let currentPercentage = 0;
+        const percentageElement = document.getElementById('percentage');
+        const totalDuration = 5000;  
+        const startTime = Date.now();
+        
+        function updatePercentage() {
+            const elapsed = Date.now() - startTime;
+            const progress = Math.min(elapsed / totalDuration, 1);
             
-            setTimeout(() => {
-                window.location.href = 'index.html';
-            }, 1000);
-        }, 3500);
-
-        // Optional: Click to skip animation
-        document.addEventListener('click', () => {
-            const container = document.getElementById('transitionContainer');
-            container.classList.add('fade-out');
-            
-            setTimeout(() => {
-                window.location.href = 'index.html';
-            }, 500);
-        });
-
-        // Add some dynamic particle generation
-        function createDynamicParticles() {
-            const particles = document.querySelector('.particles');
-            
-            setInterval(() => {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
-                particle.style.background = Math.random() > 0.5 ? 'var(--soft-pink)' : 'var(--lavender)';
-                
-                particles.appendChild(particle);
+            if (progress < 1) {
+                currentPercentage = Math.floor(progress * 100);
+                percentageElement.textContent = currentPercentage + '%';
+                requestAnimationFrame(updatePercentage);
+            } else {
+                percentageElement.textContent = '100%';
                 
                 setTimeout(() => {
-                    particle.remove();
-                }, 8000);
-            }, 800);
+                    document.body.style.opacity = '0';
+                    document.body.style.transition = 'opacity 0.5s ease-out';
+                    
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 500);
+                }, 300);
+            }
         }
-
-        // Start dynamic particles after initial load
-        setTimeout(createDynamicParticles, 1000);
+        
+        updatePercentage();
     </script>
 </body>
 </html>

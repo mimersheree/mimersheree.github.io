@@ -6,6 +6,7 @@
     <title>Mimi Pomephimkham Portfolio</title>
     <link rel="stylesheet" href="master.css">
     <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </head>
 <body>
@@ -47,14 +48,14 @@
 </nav>
 
     <!-- Hero Section -->
-     <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="header" data-aos="fade-up" data-aos-duration="1000">
-            <h1 class="faint">🫧 Hi, I'm Mimi.</h1>
-            <h1>UX/UI Designer & Software Developer</h1>
-            <p>🤍 continuously designing and coding meaningful user experiences  </p>
-        </div>
-    </section>
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="header" data-aos="fade-up" data-aos-duration="1000">
+        <h1>🫧 <span id="intro-text"></span></h1>
+        <h1><span id="title-text"></span></h1>
+        <p><span class="heart-emoji">🤍</span> continuously designing and coding meaningful user experiences </p>
+    </div>
+</section>
 
     <div class="bubbles-container">
     <div class="bubble bubble-1"></div>
@@ -73,7 +74,7 @@
     <!-- Work Section -->
      <section id="work">
     <div class="project-list">
-        <h1 class="faint">Featured Work.</h1>
+      <h1 class="faint" data-aos="fade-up" data-aos-duration="800">Featured Work.</h1>
         <div class="divider"></div>
 
         <a href="project1.html" class="project" data-aos="fade-up" data-aos-duration="800">
@@ -158,6 +159,13 @@
 
   <!-- Scroll to Top Button -->
   <button id="scrollUpBtn" title="Scroll to top">↑</button>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: false,
+      });
+    </script>
+    <script src="typewriter.js"></script> 
     <script src="script.js"></script>
 </body>
 </html>

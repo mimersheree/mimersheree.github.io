@@ -8,23 +8,23 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
 </head>
 <body>
 
-    <!-- Desktop Navigation -->
     <nav id="desktop-nav">
         <div class="logo title-name">
             <a href="index.html">Mimi Pomephimkham</a>
         </div>
-              <!-- Dark Mode -->
-    <div class="theme-switch-wrapper">
-        <label class="theme-switch" for="checkbox">
-            <input type="checkbox" id="checkbox" /> <div class="slider round">
-                <span class="emoji-sun">☀️</span>
-                <span class="emoji-moon">🌙</span>
-            </div>
-        </label>
-    </div>
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" /> 
+                <div class="slider round">
+                    <span class="emoji-sun">☀️</span>
+                    <span class="emoji-moon">🌙</span>
+                </div>
+            </label>
+        </div>
         <div>
             <ul class="nav-links">
                 <li><a href="index.html#work">Work</a></li>
@@ -34,7 +34,6 @@
         </div>
     </nav>
 
-    <!-- Hamburger Navigation -->
     <nav id="hamburger-nav">
         <div class="logo">Mimi Pomephimkham</div>
         <div class="hamburger-menu">
@@ -43,8 +42,8 @@
                 <span></span>
                 <span></span>
             </div>
-            <div class="menu-links"> <ul>     
-                <li><a href="index.html#work" onclick="toggleMenu()">Work</a></li>                                                                     
+            <div class="menu-links"> <ul>    
+                <li><a href="index.html#work" onclick="toggleMenu()">Work</a></li>                                
                 <li><a href="about.html" onclick="toggleMenu()">About</a></li>
                 <li><a href="#contact-and-footer" onclick="toggleMenu()">Contact</a></li>
                 </ul>
@@ -52,45 +51,43 @@
         </div>
     </nav>
 
-    <!-- About Section -->
-   <section id="about">
-</div>
-    <p class="section__text__p1">Here's who I am</p>
-    <h1 class="title">🌸 Fun facts about me</h1>
-    <div class="section-container">
-        <div class="section__pic-container-1">
-            <img src="./assets/profile_about.png" alt="Profile picture" class="about-pic" />
-        </div>
-        <div class="text-container">
-            <p>🌷 Hi there! I'm Mimi, a UX/UI designer & developer from Cali pursuing a <b>Master's in Computer Science </b> 
-                with a focus on <b>Human-Computer Interaction (HCI).</b> I specialize in creating <b>user-centered</b> products and solutions that
-                not only meet business goals but also address real user needs.</p>
-
-            <p>☺️ With a background in biology, I approach design with <b>empathy </b>and bring a unique blend of <b>analytical thinking </b>
-                with <b>creativity</b> to my design process. I'm always looking to create visually appealing interfaces that enhance overall 
-                user experience.</p> 
+    <section id="about">
+        <p class="section__text__p1" data-aos="fade-up" data-aos-duration="800">Here's who I am</p>
+        <h1 class="title" data-aos="fade-up" data-aos-duration="900">🌸 Fun facts about me</h1>
+        
+        <div class="section-container">
+            <div class="section__pic-container-1" data-aos="fade-in" data-aos-duration="1200">
+                <img src="./assets/profile_about.png" alt="Profile picture" class="about-pic" />
+            </div>
             
-            <p>🎨 When I'm not designing, you'll find me working out, hiking, cooking, reading, gaming and exploring photography.
-            </p>
+            <div class="text-container" data-aos="fade-in" data-aos-duration="1200" data-aos-delay="200">
+                <p data-aos="fade-up" data-aos-duration="1000">🌷 Hi there! I'm Mimi, a UX/UI designer & developer from Cali pursuing a <b>Master's in Computer Science </b> 
+                    with a focus on <b>Human-Computer Interaction (HCI).</b> I specialize in creating <b>user-centered</b> products and solutions that
+                    not only meet business goals but also address real user needs.</p>
+
+                <p data-aos="fade-up" data-aos-duration="1100" data-aos-delay="100">☺️ With a background in biology, I approach design with <b>empathy </b>and bring a unique blend of <b>analytical thinking </b>
+                    with <b>creativity</b> to my design process. I'm always looking to create visually appealing interfaces that enhance overall 
+                    user experience.</p> 
+                
+                <p data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">🎨 When I'm not designing, you'll find me working out, hiking, cooking, reading, gaming and exploring photography.
+                </p>
+                
+                <p data-aos="fade-up" data-aos-duration="1300" data-aos-delay="300">🤝 Let's connect and build something together!</p> 
+                
+                <p data-aos="fade-up" data-aos-duration="1400" data-aos-delay="400">🎀 Contact me for my full resume.</p>
+            </div>
             
-            <p>🤝 Let's connect and build something together!</p> 
-    
-            <p>🎀 Contact me for my full resume.</p>
+            <div class="chatbot-avatar-container">
+                <img src="assets/bunny.jpg" alt="Chatbot Bunny" class="chatbot-avatar">
+                <div class="chatbot-bubble"></div>
+            </div>
         </div>
-        <div class="chatbot-avatar-container">
-    <img src="assets/bunny.jpg" alt="Chatbot Bunny" class="chatbot-avatar">
-    <div class="chatbot-bubble"></div>
-    </div>
-</section>
+    </section>
 
-    </div>
-</section>
-
-    <!-- Skills Section -->
     <section id="skills">
         <div class="skills-container container">
             <div class="skills-grid">
-                <div class="skills-column">
+                <div class="skills-column" data-aos="fade-up" data-aos-duration="1000"> 
                     <h3 class="skills-category">
                         <span class="skills-emoji">💻</span>
                         Skills & Expertise
@@ -109,7 +106,7 @@
                     </ul>
                 </div>
 
-                <div class="skills-column">
+                <div class="skills-column" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"> 
                     <h3 class="skills-category">
                         <span class="skills-emoji">✨</span>
                         Currently Improving
@@ -127,66 +124,71 @@
         </div>
     </section>
 
-    <!-- Music Section -->
-<section id="music">
-    <div class="music-container container">
-        <div class="music-content-wrapper">
-            <div class="music-grid">
-                <div class="music-image-container">
-                    <div class="music-image-wrapper">
-                        <img src="assets/playlist.jpg" alt="Music Playlist" class="music-note-image" />
-                        <button class="play-button" id="spotifyPlayButton" aria-label="Play on Spotify">
-    <span class="play-icon-arrow"></span> <span class="play-icon-text">PLAY</span> </button>
+    <section id="music">
+        <div class="music-container container">
+            <div class="music-content-wrapper" data-aos="fade-up" data-aos-duration="1000"> 
+                <div class="music-grid">
+                    <div class="music-image-container">
+                        <div class="music-image-wrapper">
+                            <img src="assets/playlist.jpg" alt="Music Playlist" class="music-note-image" />
+                            <button class="play-button" id="spotifyPlayButton" aria-label="Play on Spotify">
+                                <span class="play-icon-arrow"></span> <span class="play-icon-text">PLAY</span> 
+                            </button>
+                        </div>
                     </div>
-                </div>
 
-                <div class="music-content">
-                    <h3 class="music-title">
-                        <span class="music-emoji">🎧</span>
-                        What I'm listening to
-                    </h3>
-                    <ul class="music-list">
-                        <li data-song="zombie-pop">zombie pop - DPR IAN</li> </ul>
+                    <div class="music-content">
+                        <h3 class="music-title">
+                            <span class="music-emoji">🎧</span>
+                            What I'm listening to
+                        </h3>
+                        <ul class="music-list">
+                            <li data-song="zombie-pop">zombie pop - DPR IAN</li> 
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
+
+ <section id="photo-collage">
+    <h1 class="title" data-aos="fade-up" data-aos-duration="900">📸 Captured Moments</h1> 
+    <div class="collage-container">
+        <img src="./assets/pics.png" alt="Photo Collage" class="collage-image" data-aos="blur-fade-in" data-aos-duration="1000" /> 
+        <img src="./assets/pics2.png" alt="Photo Collage" class="collage-image" data-aos="blur-fade-in" data-aos-duration="1000" data-aos-delay="200" /> 
     </div>
 </section>
 
-    <!-- Pics Section -->
-    <section id="photo-collage">
-        <h1 class="title">📸 Captured Moments</h1>
-        <div class="collage-container">
-            <img src="./assets/pics.png" alt="Photo Collage" class="collage-image" />
-            <img src="./assets/pics2.png" alt="Photo Collage" class="collage-image" />
+    <section id="contact-and-footer">
+        <div class="footer-grid-container container">
+            <div class="footer-column branding-column"> 
+                <h2 class="footer-heading-logo"><span class="emoji"> 𐙚 </span> Thanks for visiting! </h2>
+                <p class="footer-tagline">Let's chat about design, good food, and matcha. 🍵</p>
+                <p class="footer-copyright">© Mimi Pomephimkham 2025</p>
+            </div>
+
+            <div class="footer-column contact-column-right"> 
+                <h3 class="footer-subheading">contact me</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:mimiphim2@gmail.com" class="link">Email</a></li>
+                    <li><a href="https://www.linkedin.com/in/mimiphim/" target="_blank" rel="noopener" class="link">LinkedIn</a></li>
+                </ul>
+            </div>
         </div>
     </section>
 
- <!-- Contact and Footer Section -->
-<section id="contact-and-footer">
-<div class="footer-grid-container container">
-<div class="footer-column branding-column">
- <h2 class="footer-heading-logo"><span class="emoji"> 𐙚 </span> Thanks for visiting! </h2>
- <p class="footer-tagline">Let's chat about design, good food, and matcha. 🍵</p>
- <p class="footer-copyright">© Mimi Pomephimkham 2025</p>
-</div>
+    <button id="scrollUpBtn" title="Scroll to top">↑</button>
 
-<div class="footer-column contact-column-right">  <h3 class="footer-subheading">contact me</h3>
-<ul class="footer-links">
-<li><a href="mailto:mimiphim2@gmail.com" class="link">Email</a></li>
-<li><a href="https://www.linkedin.com/in/mimiphim/" target="_blank" rel="noopener" class="link">LinkedIn</a></li>
-</ul>
-</div>
-</div>
-</section>
-
-  <!-- Scroll to Top Button -->
-  <button id="scrollUpBtn" title="Scroll to top">↑</button>
-
-  <div class="custom-cursor" id="customCursor">
-    <span class="cursor-text"></span>
-</div>
-    <script src="script.js"></script>
+    <div class="custom-cursor" id="customCursor">
+        <span class="cursor-text"></span>
+    </div>
     
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: false,  
+      });
+    </script>
+    <script src="script.js"></script>
 </body>
 </html>

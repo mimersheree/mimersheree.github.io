@@ -732,6 +732,25 @@ nav, #desktop-nav {
     color: var(--text80);
 }
 
+
+.heart-emoji {
+    color: var(--pink-accent);
+    font-size: inherit;
+    vertical-align: middle;
+}
+
+.header h1 {
+    color: var(--clean-purple);
+}
+
+.header h1:first-of-type {
+    color: var(--text20);
+}
+
+.typewriter-effect-span {
+    color: inherit;
+}
+
 /* WORK SECTION */
 #work {
     padding: 6rem 2rem;
@@ -1204,6 +1223,34 @@ nav, #desktop-nav {
     color: var(--pink-accent);
     font-weight: 600;
 }
+
+/* Blurry fade-in */
+[data-aos="blur-fade-in"] {
+    opacity: 0;           
+    filter: blur(20px);   
+    transition-property: opacity, filter; 
+}
+
+[data-aos="blur-fade-in"].aos-animate {
+    opacity: 1;           
+    filter: blur(0);      
+}
+
+.collage-image {
+    width: 100%;
+    max-width: 400px;    
+    border-radius: 1.5rem;
+    box-shadow: 0 15px 30px rgba(255, 105, 180, 0.1);
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; 
+    
+    margin: 0 auto;    
+}
+
+.collage-image:hover {
+    transform: scale(1.02); 
+    box-shadow: 0 20px 40px #ff69b433; 
+}
+
 
 /* CHATBOT SECTION */
 .chatbot-avatar-container {

@@ -449,7 +449,6 @@ if (themeToggle) {
     });
 }
 
-// transition 
  setTimeout(() => {
             const container = document.getElementById('transitionContainer');
             container.classList.add('fade-out');
@@ -459,7 +458,6 @@ if (themeToggle) {
             }, 1000);
         }, 3500);
 
-        // Optional: Click to skip animation
         document.addEventListener('click', () => {
             const container = document.getElementById('transitionContainer');
             container.classList.add('fade-out');
@@ -469,7 +467,6 @@ if (themeToggle) {
             }, 500);
         });
 
-        // Add some dynamic particle generation
         function createDynamicParticles() {
             const particles = document.querySelector('.particles');
             
@@ -488,5 +485,67 @@ if (themeToggle) {
             }, 800);
         }
 
-        // Start dynamic particles after initial load
         setTimeout(createDynamicParticles, 1000);
+
+    // Typewriter
+document.addEventListener('DOMContentLoaded', function() {
+    const introTextElement = document.getElementById('intro-text');
+    const titleTextElement = document.getElementById('title-text');
+
+    const introFullText = 'Hi, I\'m Mimi';
+    const introTypingSpeed = 80; 
+
+    const titleFullText = 'UX/UI Designer & Software Developer';
+    const titleTypingSpeed = 60; 
+
+    const delayBetweenLines = 1000; 
+
+    /**
+     * @param {HTMLElement} element 
+     * @param {string} fullText 
+     * @param {number} typingSpeed 
+     * @param {Function} [callback] 
+     */
+    function typeTextOnce(element, fullText, typingSpeed, callback = null) {
+        let charIndex = 0;
+        element.classList.add('typewriter-effect-span');
+
+        element.style.borderRight = '2px solid rgba(0, 0, 0, .75)';
+        if (document.body.classList.contains('dark-theme')) {
+            element.style.borderRight = '2px solid rgba(255,255,255,.75)';
+        }
+
+        let blinkInterval = setInterval(() => {
+            element.style.borderRightColor = (element.style.borderRightColor === 'transparent') ?
+            (document.body.classList.contains('dark-theme') ? 'rgba(255,255,255,.75)' : 'rgba(0,0,0,.75)') :
+            'transparent';
+        }, 500); 
+
+        function typeCharacter() {
+            if (charIndex < fullText.length) {
+                element.innerHTML += fullText.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeCharacter, typingSpeed);
+            } else {
+                clearInterval(blinkInterval); 
+                element.style.borderRight = 'none'; 
+                if (callback) {
+                    callback(); 
+                }
+            }
+        }
+        typeCharacter(); 
+    }
+
+    function startHeroAnimations() {
+        setTimeout(() => {
+            typeTextOnce(introTextElement, introFullText, introTypingSpeed, () => {
+                setTimeout(() => {
+                    typeTextOnce(titleTextElement, titleFullText, titleTypingSpeed);
+                }, delayBetweenLines);
+            });
+        }, 500); 
+    }
+
+    startHeroAnimations();
+});
