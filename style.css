@@ -1135,7 +1135,7 @@ nav, #desktop-nav {
     border-radius: 2rem;
     box-shadow: 0 20px 40px rgba(255, 105, 180, 0.15);
     transition: transform 0.5s ease-out, box-shadow 0.5s ease-out; 
-    cursor: pointer; 
+    cursor: default; 
 }
 
 .section__pic-container-1 .about-pic:hover {
