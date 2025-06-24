@@ -449,6 +449,7 @@ if (themeToggle) {
     });
 }
 
+//
  setTimeout(() => {
             const container = document.getElementById('transitionContainer');
             container.classList.add('fade-out');

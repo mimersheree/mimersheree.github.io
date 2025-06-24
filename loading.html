@@ -43,7 +43,7 @@
         }
 
         body {
-            font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: var(--bg-color);
             color: var(--text);
             overflow: hidden;
@@ -125,7 +125,7 @@
             top: calc(50% - 7px);
             left: calc(50% - 7px);
             transform-origin: 7px 147px;
-            animation: rotateDot 5s linear forwards;
+            animation: rotateDot 1.5s linear forwards;
             filter: drop-shadow(0 0 12px rgba(255, 105, 180, 0.8));
             box-shadow: 0 0 16px rgba(255, 105, 180, 0.6);
             z-index: 10;
@@ -235,7 +235,7 @@
         let currentPercentage = 0;
         const percentageElement = document.getElementById('percentage');
         const movingDot = document.getElementById('movingDot');
-        const totalDuration = 5000;  
+        const totalDuration = 1500;  // Changed from 5000 to 1500 milliseconds (1.5 seconds)
         const startTime = Date.now();
         
         function updatePercentage() {
