@@ -548,3 +548,74 @@ document.addEventListener('DOMContentLoaded', function() {
 
     startHeroAnimations();
 });
+
+//Carousel Class
+class SmoothCarousel {
+    constructor(trackSelector, options = {}) {
+        this.track = document.querySelector(trackSelector);
+        this.items = this.track.children;
+        this.itemCount = this.items.length / 2; 
+        this.speed = options.speed || 0.8; 
+        this.currentPosition = 0;
+        this.isHovered = false;
+        
+        this.init();
+    }
+    
+    init() {
+        this.calculateDimensions();
+        
+        this.animate();
+        
+        this.track.addEventListener('mouseenter', () => this.isHovered = true);
+        this.track.addEventListener('mouseleave', () => this.isHovered = false);
+        
+        window.addEventListener('resize', () => {
+            setTimeout(() => this.calculateDimensions(), 100);
+        });
+    }
+    
+    calculateDimensions() {
+        if (this.items.length === 0) return;
+        
+        const firstItem = this.items[0];
+        const itemWidth = firstItem.offsetWidth;
+        const trackStyle = window.getComputedStyle(this.track);
+        const gap = parseInt(trackStyle.gap) || 20;
+        
+        this.oneSetWidth = (itemWidth + gap) * this.itemCount;
+        
+        const screenWidth = window.innerWidth;
+        if (screenWidth <= 600) {
+            this.speed = 0.5;
+        } else if (screenWidth <= 900) {
+            this.speed = 0.6;
+        } else {
+            this.speed = 0.8;
+        }
+    }
+    
+    animate() {
+        if (!this.isHovered && this.oneSetWidth > 0) {
+            this.currentPosition += this.speed;
+            
+            if (this.currentPosition >= this.oneSetWidth) {
+                this.currentPosition = 0;
+            }
+            
+            this.track.style.transform = `translateX(-${this.currentPosition}px)`;
+        }
+        
+        requestAnimationFrame(() => this.animate());
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            const carousel = new SmoothCarousel('.carousel-track', {
+                speed: 0.8 
+            });
+        }, 200);
+    });
+});

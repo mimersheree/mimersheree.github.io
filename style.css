@@ -1817,53 +1817,98 @@ nav, #desktop-nav {
 
 /* PHOTO COLLAGE */
 #photo-collage {
-    padding: 6rem 2rem;
+    padding: 6rem 0;
     background: rgba(248, 240, 255, 0.3);
+    overflow: hidden;
     text-align: center;
 }
 
-.collage-container {
-    max-width: 900px;  
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-top: 3rem;
-    justify-items: center; 
+.title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 60px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    color: #333;
 }
 
-.collage-image {
+.carousel-container {
+    position: relative;
     width: 100%;
-    max-width: 400px;  
-    border-radius: 1.5rem;
-    box-shadow: 0 15px 30px rgba(255, 105, 180, 0.1);
-    transition: all 0.3s ease;
-    margin: 0 auto;  
+    height: 472px;
+    overflow: hidden;
 }
 
-.collage-image:hover {
-    transform: scale(1.02);
-    box-shadow: 0 20px 40px #ff69b433;
+.carousel-track {
+    display: flex;
+    height: 100%;
+    gap: 20px;
+    will-change: transform;
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    height: 100%;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    width: 340px;
+    background: #ddd; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #666;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-track:hover {
+    animation-play-state: paused !important; 
 }
 
 @media (max-width: 900px) {
-    .collage-container {
-        grid-template-columns: 1fr;
-        max-width: 400px;  
+    .title {
+        font-size: 2rem;
+        margin-bottom: 40px;
     }
     
-    .collage-image {
-        max-width: 350px;  
+    .carousel-container {
+        height: 350px;
+    }
+    
+    .carousel-item {
+        width: 250px !important;
     }
 }
 
 @media (max-width: 600px) {
-    .collage-image {
-        max-width: 300px;  
+    .title {
+        font-size: 1.5rem;
     }
     
-    .collage-container {
-        max-width: 320px;
+    .carousel-container {
+        height: 280px;
+    }
+    
+    .carousel-item {
+        width: 200px !important;
+    }
+    
+    #photo-collage {
+        padding: 4rem 0;
+    }
+    
+    .title {
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
 }
 
