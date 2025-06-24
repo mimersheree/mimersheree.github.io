@@ -232,36 +232,41 @@
     </div>
 
     <script>
-        let currentPercentage = 0;
-        const percentageElement = document.getElementById('percentage');
-        const movingDot = document.getElementById('movingDot');
-        const totalDuration = 1500;  // Changed from 5000 to 1500 milliseconds (1.5 seconds)
-        const startTime = Date.now();
-        
-        function updatePercentage() {
-            const elapsed = Date.now() - startTime;
-            const progress = Math.min(elapsed / totalDuration, 1);
+        function startLoadingAnimation() {
+            let currentPercentage = 0;
+            const percentageElement = document.getElementById('percentage');
+            const movingDot = document.getElementById('movingDot');
+            const totalDuration = 1500;  
+            const startTime = Date.now();
             
-            if (progress < 1) {
-                currentPercentage = Math.floor(progress * 100);
-                percentageElement.textContent = currentPercentage + '%';
+            function updatePercentage() {
+                const elapsed = Date.now() - startTime;
+                const progress = Math.min(elapsed / totalDuration, 1);
                 
-                requestAnimationFrame(updatePercentage);
-            } else {
-                percentageElement.textContent = '100%';
-                
-                setTimeout(() => {
-                    document.body.style.opacity = '0';
-                    document.body.style.transition = 'opacity 0.5s ease-out';
+                if (progress < 1) {
+                    currentPercentage = Math.floor(progress * 100);
+                    percentageElement.textContent = currentPercentage + '%';
+                    
+                    requestAnimationFrame(updatePercentage);
+                } else {
+                    percentageElement.textContent = '100%';
                     
                     setTimeout(() => {
-                        window.location.href = 'index.html';
-                    }, 500);
-                }, 300);
+                        document.body.style.opacity = '0';
+                        document.body.style.transition = 'opacity 0.5s ease-out';
+                        
+                        setTimeout(() => {
+                            window.location.href = 'index.html';
+                        }, 500);
+                    }, 300);
+                }
             }
+            
+            updatePercentage();
         }
         
-        updatePercentage();
+        // Start animation immediately
+        startLoadingAnimation();
     </script>
 </body>
 </html>

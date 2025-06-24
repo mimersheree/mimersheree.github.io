@@ -448,8 +448,6 @@ if (themeToggle) {
         setTheme(themeToggle.checked);
     });
 }
-
-//
  setTimeout(() => {
             const container = document.getElementById('transitionContainer');
             container.classList.add('fade-out');
