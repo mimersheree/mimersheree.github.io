@@ -28,6 +28,7 @@
     --dark-text20: rgba(224, 224, 224, 0.2);
     --dark-bg1: rgba(255, 105, 180, 0.1); 
     --dark-bg2: rgba(255, 105, 180, 0.05);
+    --dark-section-bg: #222222;
 
     /* CURSOR ORB */
     --orb-gradient-light: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(220, 220, 220, 0.8) 50%, rgba(180, 180, 180, 0.7) 100%);
@@ -46,8 +47,7 @@ body.dark-theme {
 body.dark-theme #work,
 body.dark-theme #skills,
 body.dark-theme #music,
-body.dark-theme #photo-collage,
-body.dark-theme #about {  
+body.dark-theme #photo-collage {  
     background: var(--dark-section-bg); 
     transition: background 400ms ease;  
 }
@@ -98,7 +98,11 @@ body.dark-theme .hamburger-icon span {
 }
 
 body.dark-theme .hero {
-    background: linear-gradient(135deg, var(--dark-bg-color) 0%, #222222 100%);
+    background: var(--dark-hero-bg);
+}
+body.dark-theme #about {
+    background: var(--dark-hero-bg); 
+    transition: background 400ms ease;
 }
 
 body.dark-theme .hero-bg::before,
@@ -158,12 +162,10 @@ body.dark-theme .tag {
     transform: translate(-50%, -50%) scale(1);  
 }
 
-/* Dark mode divider adjustment */
 body.dark-theme .divider {
     border-bottom: 1px solid var(--dark-divider);
 }
 
-/* Dark mode cursor orb effect */
 body.dark-theme .custom-cursor {
     background: var(--orb-gradient-dark);
     box-shadow: var(--orb-shadow-dark);
@@ -193,7 +195,7 @@ body.dark-theme .cursor-text {
 }
 
 body.dark-theme #music {
-    background: rgba(0, 0, 0, 0.2);
+    background: var(--dark-section-bg);
 }
 
 body.dark-theme .music-content-wrapper {
@@ -227,7 +229,7 @@ body.dark-theme .play-icon-text {
 }
 
 body.dark-theme #skills {
-    background: rgba(0, 0, 0, 0.2);
+    background: var(--dark-section-bg);
 }
 
 body.dark-theme #desktop-nav{
@@ -261,7 +263,7 @@ body.dark-theme .skills-more:hover {
 }
 
 body.dark-theme #photo-collage {
-    background: rgba(0, 0, 0, 0.2);
+    background: var(--dark-section-bg);
 }
 
 body.dark-theme .collage-image {
@@ -273,7 +275,7 @@ body.dark-theme .collage-image:hover {
 }
 
 body.dark-theme #contact-and-footer {
-    background-color: var(--dark-bg-color);
+    background: var(--dark-section-bg);
     color: var(--dark-text);
 }
 
