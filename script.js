@@ -549,22 +549,30 @@ document.addEventListener('DOMContentLoaded', function() {
     startHeroAnimations();
 });
 
-//Carousel Class
+// Carousel Class 
 class SmoothCarousel {
     constructor(trackSelector, options = {}) {
         this.track = document.querySelector(trackSelector);
+        this.container = this.track.parentElement;
         this.items = this.track.children;
         this.itemCount = this.items.length / 2; 
         this.speed = options.speed || 0.8; 
         this.currentPosition = 0;
         this.isHovered = false;
+        this.isDragging = false;
+        this.dragStartX = 0;
+        this.dragStartPosition = 0;
+        this.lastDragTime = 0;
+        this.dragVelocity = 0;
+        this.momentum = 0;
+        this.isAnimating = true;
         
         this.init();
     }
     
     init() {
         this.calculateDimensions();
-        
+        this.setupDragListeners();
         this.animate();
         
         this.track.addEventListener('mouseenter', () => this.isHovered = true);
@@ -595,14 +603,145 @@ class SmoothCarousel {
         }
     }
     
-    animate() {
-        if (!this.isHovered && this.oneSetWidth > 0) {
-            this.currentPosition += this.speed;
-            
-            if (this.currentPosition >= this.oneSetWidth) {
-                this.currentPosition = 0;
+    setupDragListeners() {
+        this.container.addEventListener('mousedown', this.handleDragStart.bind(this));
+        document.addEventListener('mousemove', this.handleDragMove.bind(this));
+        document.addEventListener('mouseup', this.handleDragEnd.bind(this));
+        
+        this.container.addEventListener('touchstart', this.handleTouchStart.bind(this), { passive: false });
+        document.addEventListener('touchmove', this.handleTouchMove.bind(this), { passive: false });
+        document.addEventListener('touchend', this.handleTouchEnd.bind(this));
+        
+        this.container.addEventListener('dragstart', (e) => e.preventDefault());
+        
+        this.container.style.cursor = 'grab';
+    }
+    
+    handleDragStart(e) {
+        this.isDragging = true;
+        this.isAnimating = false;
+        this.dragStartX = e.clientX;
+        this.dragStartPosition = this.currentPosition;
+        this.lastDragTime = Date.now();
+        this.dragVelocity = 0;
+        this.momentum = 0;
+        this.container.style.cursor = 'grabbing';
+        
+        e.preventDefault();
+    }
+    
+    handleDragMove(e) {
+        if (!this.isDragging) return;
+        
+        const currentX = e.clientX;
+        const deltaX = this.dragStartX - currentX;
+        const currentTime = Date.now();
+        const deltaTime = currentTime - this.lastDragTime;
+        
+        if (deltaTime > 0) {
+            this.dragVelocity = deltaX / deltaTime;
+        }
+        
+        this.currentPosition = this.dragStartPosition + (deltaX * 0.2);
+        this.normalizePosition();
+        this.lastDragTime = currentTime;
+        
+        e.preventDefault();
+    }
+    
+    handleDragEnd(e) {
+        if (!this.isDragging) return;
+        
+        this.isDragging = false;
+        this.container.style.cursor = 'grab';
+        
+        this.momentum = this.dragVelocity * 8; 
+        
+        this.startMomentumAnimation();
+    }
+    
+    handleTouchStart(e) {
+        if (e.touches.length !== 1) return;
+        
+        this.isDragging = true;
+        this.isAnimating = false;
+        this.dragStartX = e.touches[0].clientX;
+        this.dragStartPosition = this.currentPosition;
+        this.lastDragTime = Date.now();
+        this.dragVelocity = 0;
+        this.momentum = 0;
+        
+        e.preventDefault();
+    }
+    
+    handleTouchMove(e) {
+        if (!this.isDragging || e.touches.length !== 1) return;
+        
+        const currentX = e.touches[0].clientX;
+        const deltaX = this.dragStartX - currentX;
+        const currentTime = Date.now();
+        const deltaTime = currentTime - this.lastDragTime;
+        
+        if (deltaTime > 0) {
+            this.dragVelocity = deltaX / deltaTime;
+        }
+        
+        this.currentPosition = this.dragStartPosition + (deltaX * 0.2);
+        this.normalizePosition();
+        this.lastDragTime = currentTime;
+        
+        e.preventDefault();
+    }
+    
+    handleTouchEnd(e) {
+        if (!this.isDragging) return;
+        
+        this.isDragging = false;
+        
+        this.momentum = this.dragVelocity * 8;
+        this.startMomentumAnimation();
+    }
+    
+    startMomentumAnimation() {
+        const animateMomentum = () => {
+            if (Math.abs(this.momentum) < 0.1) {
+                this.momentum = 0;
+                this.isAnimating = true; 
+                return;
             }
             
+            this.currentPosition += this.momentum;
+            this.normalizePosition();
+            this.momentum *= 0.95;
+            
+            requestAnimationFrame(animateMomentum);
+        };
+        
+        if (Math.abs(this.momentum) > 0.1) {
+            animateMomentum();
+        } else {
+            this.isAnimating = true; 
+        }
+    }
+    
+    normalizePosition() {
+        if (this.oneSetWidth <= 0) return;
+        
+        while (this.currentPosition >= this.oneSetWidth) {
+            this.currentPosition -= this.oneSetWidth;
+        }
+        while (this.currentPosition < 0) {
+            this.currentPosition += this.oneSetWidth;
+        }
+    }
+    
+    animate() {
+        if (!this.isDragging && !this.isHovered && this.isAnimating && this.oneSetWidth > 0) {
+            this.currentPosition += this.speed;
+            this.normalizePosition();
+        }
+        
+        if (this.oneSetWidth > 0) {
             this.track.style.transform = `translateX(-${this.currentPosition}px)`;
         }
         

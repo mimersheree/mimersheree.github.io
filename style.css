@@ -48,7 +48,7 @@ body.dark-theme #skills,
 body.dark-theme #music,
 body.dark-theme #photo-collage,
 body.dark-theme #about {  
-    background: var(--dark-section-bg);  
+    background: var(--dark-section-bg); 
     transition: background 400ms ease;  
 }
 
