@@ -427,64 +427,82 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Dark Mode
+// Dark Mode 
 const themeToggle = document.getElementById('checkbox');
 const body = document.body;
 
 function setTheme(isDark) {
     if (isDark) {
         body.classList.add('dark-theme');
-        themeToggle.checked = true; 
+        if (themeToggle) themeToggle.checked = true;
+        localStorage.setItem('darkMode', 'true');
     } else {
         body.classList.remove('dark-theme');
-        themeToggle.checked = false; 
+        if (themeToggle) themeToggle.checked = false;
+        localStorage.setItem('darkMode', 'false');
+    }
+}
+ 
+function loadSavedTheme() {
+    const savedTheme = localStorage.getItem('darkMode');
+    if (savedTheme === 'true') {
+        setTheme(true);
+    } else {
+        setTheme(false);
     }
 }
 
-setTheme(false);
+loadSavedTheme();
 
 if (themeToggle) {
     themeToggle.addEventListener('change', () => {
         setTheme(themeToggle.checked);
     });
 }
- setTimeout(() => {
-            const container = document.getElementById('transitionContainer');
-            container.classList.add('fade-out');
+
+setTimeout(() => {
+    const container = document.getElementById('transitionContainer');
+    if (container) {
+        container.classList.add('fade-out');
+        
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 1000);
+    }
+}, 3500);
+
+document.addEventListener('click', () => {
+    const container = document.getElementById('transitionContainer');
+    if (container) {
+        container.classList.add('fade-out');
+        
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 500);
+    }
+});
+
+function createDynamicParticles() {
+    const particles = document.querySelector('.particles');
+    
+    if (particles) {
+        setInterval(() => {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+            particle.style.background = Math.random() > 0.5 ? 'var(--soft-pink)' : 'var(--lavender)';
+            
+            particles.appendChild(particle);
             
             setTimeout(() => {
-                window.location.href = 'index.html';
-            }, 1000);
-        }, 3500);
+                particle.remove();
+            }, 8000);
+        }, 800);
+    }
+}
 
-        document.addEventListener('click', () => {
-            const container = document.getElementById('transitionContainer');
-            container.classList.add('fade-out');
-            
-            setTimeout(() => {
-                window.location.href = 'index.html';
-            }, 500);
-        });
-
-        function createDynamicParticles() {
-            const particles = document.querySelector('.particles');
-            
-            setInterval(() => {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
-                particle.style.background = Math.random() > 0.5 ? 'var(--soft-pink)' : 'var(--lavender)';
-                
-                particles.appendChild(particle);
-                
-                setTimeout(() => {
-                    particle.remove();
-                }, 8000);
-            }, 800);
-        }
-
-        setTimeout(createDynamicParticles, 1000);
+setTimeout(createDynamicParticles, 1000);
 
     // Typewriter
 document.addEventListener('DOMContentLoaded', function() {
