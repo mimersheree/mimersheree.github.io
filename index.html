@@ -1,172 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mimi Pomephimkham Portfolio</title>
-    <link rel="stylesheet" href="master.css">
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@200;300;400;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            font-size: 16px;
+            --main: #fff;
+            --bg-color: #fefbff;   
+            --text: #6e6c75cc;    
+            --text80: #6e6c75cc;     
+            --text50: rgba(45, 27, 105, 0.5);      
+            --text4: rgba(45, 27, 105, 0.3);       
+            --bg1: rgba(255, 182, 193, 0.15);       
+            --bg2: rgba(255, 182, 193, 0.08);      
+            --text20: rgba(45, 27, 105, 0.2);
+            --pink-accent: #ff69b4;
+            --soft-pink: #ffb6c1;
+            --lavender: #e6e6fa;
+            --clean-blue: #2f2f2f;
+            --clean-purple: #2f2f2f;
+            --clean-black: #2f2f2f;
+
+            /* DARK MODE */
+            --dark-main: #2f2f2f; 
+            --dark-bg-color: #1a1a1a; 
+            --dark-bg-color-rgb: 26, 26, 26;
+            --dark-text: #e0e0e0; 
+            --dark-text80: #cccccc;
+            --dark-text50: rgba(224, 224, 224, 0.5);
+            --dark-text20: rgba(224, 224, 224, 0.2);
+            --dark-bg1: rgba(255, 105, 180, 0.1); 
+            --dark-bg2: rgba(255, 105, 180, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--bg-color);
+            color: var(--text);
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .circle-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .breathing-circle {
+            width: 280px;
+            height: 280px;
+            border: 2px solid var(--soft-pink);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .inner-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, var(--bg1), var(--bg2));
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--text20);
+        }
+
+        .percentage {
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: var(--pink-accent);
+            text-align: center;
+            letter-spacing: 0.02em;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .loading-text {
+            font-size: 1.0rem;
+            color: var(--text80);
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            opacity: 0.7;
+            animation: pulse 2s ease-in-out infinite;
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .moving-dot {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            background: var(--pink-accent);
+            border-radius: 50%;
+            top: calc(50% - 7px);
+            left: calc(50% - 7px);
+            transform-origin: 7px 147px;
+            animation: rotateDot 1.5s linear forwards;
+            filter: drop-shadow(0 0 12px rgba(255, 105, 180, 0.8));
+            box-shadow: 0 0 16px rgba(255, 105, 180, 0.6);
+            z-index: 10;
+        }
+
+        @keyframes breathe {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            50% { 
+                transform: scale(1.1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes rotateDot {
+            from {
+                transform: rotate(-90deg) translate(147px) rotate(90deg);
+            }
+            to {
+                transform: rotate(270deg) translate(147px) rotate(-270deg);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.6;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .dots {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--soft-pink);
+            opacity: 0.3;
+            animation: dotPulse 1.5s ease-in-out infinite;
+        }
+
+        .dot:nth-child(1) { animation-delay: 0s; }
+        .dot:nth-child(2) { animation-delay: 0.2s; }
+        .dot:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes dotPulse {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: var(--dark-bg-color);
+                color: var(--dark-text);
+            }
+
+            .breathing-circle {
+                border-color: var(--pink-accent);
+            }
+
+            .inner-circle {
+                background: linear-gradient(135deg, var(--dark-bg1), var(--dark-bg2));
+                border-color: var(--dark-text20);
+            }
+
+            .loading-text {
+                color: var(--dark-text80);
+            }
+        }
+    </style>
 </head>
 <body>
-
-    <!-- Navigation -->
-   <nav> 
-        <div class="logo title-name" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="300">
-            <a href="index.html">Mimi Pomephimkham</a>
-        </div>
-
-        <div class="theme-switch-wrapper" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="300">
-            <label class="theme-switch" for="checkbox">
-                <input type="checkbox" id="checkbox" />
-                <div class="slider round">
-                    <span class="emoji-sun">☀️</span>
-                    <span class="emoji-moon">🌙</span>
-                </div>
-            </label>
-        </div>
-    <!-- Hamburger for mobile -->
-
-     <div class="hamburger-menu" id="hamburger-nav" aria-label="Menu" role="button" tabindex="0" aria-expanded="false">
-        <div class="hamburger-icon" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-
-    
-    <!-- Desktop & Mobile Menu Links -->
-       <div data-aos="fade-in" data-aos-duration="1000" data-aos-delay="300">
-            <ul class="nav-links menu-links">
-                <li><a href="#work">Work</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#contact-and-footer">Contact</a></li>
-            </ul>
-        </div>
-</nav>
-
-    <!-- Hero Section -->
-<section class="hero">
-    <div class="hero-bg"></div>
-    <div class="header" data-aos="fade-up" data-aos-duration="1000">
-        <h1>🫧 <span id="intro-text"></span></h1>
-        <h1><span id="title-text"></span></h1>
-        <p><span class="heart-emoji">🤍</span> continuously designing and coding meaningful user experiences </p>
-    </div>
-</section>
-
-    <div class="bubbles-container">
-    <div class="bubble bubble-1"></div>
-    <div class="bubble bubble-2"></div>
-    <div class="bubble bubble-3"></div>
-    <div class="bubble bubble-4"></div>
-    <div class="bubble bubble-5"></div>
-    <div class="bubble bubble-6"></div>
-</div>
-
-<!-- Cursor button -->
-<div class="custom-cursor" id="customCursor">
-    <span class="cursor-text">view</span>
-</div>
-
-    <!-- Work Section -->
-     <section id="work">
-    <div class="project-list">
-      <h1 class="faint" data-aos="fade-up" data-aos-duration="800">Featured Work</h1>
-        <div class="divider"></div>
-
-        <a href="project1.html" class="project" data-aos="fade-up" data-aos-duration="800">
-    <div class="project-tags">
-        <div class="tag"><p>E-COMMERCE</p></div>
-        <div class="tag"><p>WEB DEVELOPMENT</p></div>
-    </div>
-        <div class="prj-title">
-            <h2>E-commerce Website</h2>
-            <div class="view-details-group"> 
-                <div class="arrow">
+    <div class="loading-container">
+        <div class="circle-container">
+            <div class="breathing-circle">
+                <div class="moving-dot" id="movingDot"></div>
+                <div class="inner-circle">
+                    <div class="percentage" id="percentage">0%</div>
                 </div>
             </div>
         </div>
-    <h3>An online store built with a responsive design and smooth UX.</h3>
-    <div class="prj-img">
-        <img src="./assets/product1.png" alt="E-commerce project screenshot" class="index-img" />
+        <div class="loading-text">
+            Loading
+            <div class="dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
     </div>
-</a>
 
-        <div class="divider"></div>
-
-        <a href="project2.html" class="project" data-aos="fade-up" data-aos-duration="800">
-            <div class="project-tags">
-                <div class="tag"><p>CRM DASHBOARD</p></div>
-                <div class="tag"><p>DATA VISUALIZATION</p></div>
-            </div>
-            <div class="prj-title">
-                <h2>Mido CRM Dashboard</h2>
-                <div class="view-details-group">
-                <div class="arrow">
-                </div>
-            </div>
-            </div>
-            <h3>A dashboard to manage customer relationships efficiently.</h3>
-            <div class="prj-img">
-                <img src="./assets/product2.png" alt="Mido CRM dashboard screenshot" class="index-img" />
-            </div>
-        </a>
-
-        <div class="divider"></div>
-
-        <a href="project3.html" class="project" data-aos="fade-up" data-aos-duration="800">
-            <div class="project-tags">
-                <div class="tag"><p>ONLINE SHOPPING</p></div>
-                <div class="tag"><p>USER EXPERIENCE</p></div>
-            </div>
-            <div class="prj-title">
-                <h2>Online Grocery Shopping</h2>
-                <div class="view-details-group">
-                <div class="arrow">
-                </div>
-            </div>
-            </div>
-            <h3>Improving the online grocery shopping experience for users.</h3>
-            <div class="prj-img">
-                <img src="./assets/product3.png" alt="Online grocery shopping screenshot" class="index-img" />
-            </div>
-        </a>
-
-        <div class="divider"></div>
-    </div>
-</section>
-
-<!-- Contact and Footer Section -->
-<section id="contact-and-footer">
-<div class="footer-grid-container container">
-<div class="footer-column branding-column">
- <h2 class="footer-heading-logo"><span class="emoji"> 𐙚 </span> Thanks for visiting! </h2>
- <p class="footer-tagline">Let's chat about design, good food, and matcha. 🍵</p>
- <p class="footer-copyright">© Mimi Pomephimkham 2025</p>
-</div>
-
-<div class="footer-column contact-column-right">  <h3 class="footer-subheading">contact me</h3>
-<ul class="footer-links">
-<li><a href="mailto:mimiphim2@gmail.com" class="link">Email</a></li>
-<li><a href="https://www.linkedin.com/in/mimiphim/" target="_blank" rel="noopener" class="link">LinkedIn</a></li>
-</ul>
-</div>
-</div>
-</section>
-
-  <!-- Scroll to Top Button -->
-  <button id="scrollUpBtn" title="Scroll to top">↑</button>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      AOS.init({
-        once: false,
-      });
+        function startLoadingAnimation() {
+            let currentPercentage = 0;
+            const percentageElement = document.getElementById('percentage');
+            const movingDot = document.getElementById('movingDot');
+            const totalDuration = 1500;  
+            const startTime = Date.now();
+            
+            function updatePercentage() {
+                const elapsed = Date.now() - startTime;
+                const progress = Math.min(elapsed / totalDuration, 1);
+                
+                if (progress < 1) {
+                    currentPercentage = Math.floor(progress * 100);
+                    percentageElement.textContent = currentPercentage + '%';
+                    
+                    requestAnimationFrame(updatePercentage);
+                } else {
+                    percentageElement.textContent = '100%';
+                    
+                    setTimeout(() => {
+                        document.body.style.opacity = '0';
+                        document.body.style.transition = 'opacity 0.5s ease-out';
+                        
+                        setTimeout(() => {
+                            window.location.href = 'home.html';
+                        }, 500);
+                    }, 300);
+                }
+            }
+            
+            updatePercentage();
+        }
+        
+        // Start animation immediately
+        startLoadingAnimation();
     </script>
-    <script src="typewriter.js"></script> 
-    <script src="script.js"></script>
 </body>
 </html>
