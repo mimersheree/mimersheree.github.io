@@ -8,6 +8,7 @@ function toggleMenu() {
     icon.classList.toggle("open"); // Opens and closes hamburger icon menu
 }
 
+
 // Project card transitions
 function restartProjectCardsTransition() {
     if (projectCards && projectObserver) {
@@ -77,6 +78,17 @@ function handleScrollEnd() {
     }, 150);
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburgerMenu = document.querySelector(".hamburger-menu");  
+    if (hamburgerMenu) {
+        hamburgerMenu.addEventListener("click", toggleMenu);
+        hamburgerMenu.setAttribute('aria-expanded', 'false'); 
+        hamburgerMenu.addEventListener("click", () => {
+            const isExpanded = hamburgerMenu.getAttribute('aria-expanded') === 'true';
+            hamburgerMenu.setAttribute('aria-expanded', !isExpanded);
+        });
+    }
+});
 
 // Bubble animations 
 document.addEventListener('DOMContentLoaded', function() {

@@ -13,9 +13,10 @@
 <body>
 
     <!-- Navigation -->
-   <nav> 
+   
+    <nav>
         <div class="logo title-name" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="300">
-            <a href="index.html">Mimi Pomephimkham</a>
+            <a href="home.html">Mimi Pomephimkham</a>
         </div>
 
         <div class="theme-switch-wrapper" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="300">
@@ -27,26 +28,26 @@
                 </div>
             </label>
         </div>
-    <!-- Hamburger for mobile -->
 
-     <div class="hamburger-menu" id="hamburger-nav" aria-label="Menu" role="button" tabindex="0" aria-expanded="false">
-        <div class="hamburger-icon" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
+        <ul class="nav-links">
+            <li><a href="#work">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#contact-and-footer">Contact</a></li>
+        </ul>
 
-    
-    <!-- Desktop & Mobile Menu Links -->
-       <div data-aos="fade-in" data-aos-duration="1000" data-aos-delay="300">
-            <ul class="nav-links menu-links">
-                <li><a href="#work">Work</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#contact-and-footer">Contact</a></li>
+         <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()" aria-label="Menu" role="button" tabindex="0" aria-expanded="false" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="mobile-menu-links">
+                <li><a href="#work" onclick="toggleMenu()">Work</a></li>
+                <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+                <li><a href="#contact-and-footer" onclick="toggleMenu()">Contact</a></li>
             </ul>
         </div>
-</nav>
+    </nav>
 
     <!-- Hero Section -->
 <section class="hero">

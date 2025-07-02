@@ -12,44 +12,36 @@
 </head>
 <body>
 
-    <!-- Desktop Navigation -->
-    <nav id="desktop-nav">
-         <div class="logo title-name">
+   <nav>
+        <div class="logo title-name">
             <a href="index.html">Mimi Pomephimkham</a>
         </div>
-                   <!-- Dark Mode -->
-    <div class="theme-switch-wrapper">
-        <label class="theme-switch" for="checkbox">
-            <input type="checkbox" id="checkbox" /> <div class="slider round">
-                <span class="emoji-sun">☀️</span>
-                <span class="emoji-moon">🌙</span>
-            </div>
-        </label>
-    </div>
-        <div>
-            <ul class="nav-links">
-                <li><a href="index.html#work">Work</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <!-- Hamburger Navigation -->
-    <nav id="hamburger-nav">
-        <div class="logo">Mimi Pomephimkham</div>
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider round">
+                    <span class="emoji-sun">☀️</span>
+                    <span class="emoji-moon">🌙</span>
+                </div>
+            </label>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html#work">Work</a></li> <li><a href="about.html">About</a></li>
+            <li><a href="index.html#contact-and-footer">Contact</a></li> </ul>
+
         <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
+            <div class="hamburger-icon" onclick="toggleMenu()" aria-label="Menu" role="button" tabindex="0" aria-expanded="false" aria-hidden="true">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <div class="menu-links"> <ul>     
-                <li><a href="index.html#work" onclick="toggleMenu()">Work</a></li>                                                                     
+            <ul class="mobile-menu-links">
+                <li><a href="index.html#work" onclick="toggleMenu()">Work</a></li>
                 <li><a href="about.html" onclick="toggleMenu()">About</a></li>
-                <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
-                </ul>
-            </div>
+                <li><a href="index.html#contact-and-footer" onclick="toggleMenu()">Contact</a></li>
+            </ul>
         </div>
     </nav>
 

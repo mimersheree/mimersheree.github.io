@@ -590,10 +590,11 @@ nav, #desktop-nav {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--clean-black);
-    transition: all 0.3s ease;  
     padding: 0.5rem 1rem;  
     border-radius: 2rem; 
     cursor: pointer; 
+    transition: color 0.7s ease, opacity 0.7s ease, transform 0.7s ease;
+    opacity: 1;
 }
 
 .title-name *, .logo * {
@@ -610,7 +611,8 @@ nav, #desktop-nav {
 .title-name a:hover, .logo a:hover,
 .title-name:hover, .logo:hover {
     color: var(--pink-accent);
-    transform: translateY(-2px);  
+    transform: translateY(-2px);
+    opacity: 0.7;
 }
 
 .title-name:has(a:hover), .logo:has(a:hover) {
@@ -1036,24 +1038,92 @@ nav, #desktop-nav {
     justify-content: center;
     gap: 2rem;
 }
-.case-study-img, .case-study-gif {
-    max-width: 90%;
-    width: auto;
-    height: auto;
-    max-height: none;
-    object-fit: initial;
-    border-radius: 1.5rem;
-    box-shadow: 0 20px 40px rgba(255, 105, 180, 0.15);
-    transition: none;
+
+/* Container for the case study image (HTML: <div class="case-study-container">...</div>) */
+.case-study-container {
+    max-width: 1168px;
     margin: 0 auto;
-    padding-top: 6rem;
-    padding-bottom: 2rem;
-    display: block;
+    padding: 6rem 2rem 2rem; /* Desktop default padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
-.case-study-img:hover, .case-study-gif:hover {
-    transform: none;
+/* Styles for the responsive case study images */
+.case-study-img, .case-study-gif {
+    max-width: 90%;       /* Desktop: Keeps it at 90% of its container (case-study-container) */
+    width: auto;          /* Allows it to shrink/grow based on content */
+    height: auto;         /* Crucial: Maintains aspect ratio */
+    display: block;
+    /* object-fit: contain; */ /* REMOVED: This can cause the "zoomed out" effect with black bars. */
+                          /* We want it to fill the width instead. */
+    border-radius: 1.5rem; /* Desktop: Default rounded corners */
     box-shadow: 0 20px 40px rgba(255, 105, 180, 0.15);
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    margin: 0 auto;       /* Centers the image horizontally */
+    padding: 0;
+}
+
+/* Hover effects for case study images/gifs */
+.case-study-img:hover, .case-study-gif:hover {
+    box-shadow: 0 25px 50px rgba(255, 105, 180, 0.25);
+}
+
+/* Media Queries for adjusting padding and image appearance on smaller screens */
+
+@media (max-width: 900px) {
+    /* Adjust overall padding for project sections on tablets */
+    #project1, #project2, #project3 {
+        padding: 3rem 1.5rem 1.5rem 1.5rem; /* Reduced padding for tablets */
+    }
+
+    /* Adjust case study container padding for tablets */
+    .case-study-container {
+        padding: 1.5rem 0.5rem; /* Reduced horizontal padding for tighter fit */
+    }
+
+    /* Styles for images on tablets */
+    .case-study-img, .case-study-gif {
+        max-width: 100%;       /* Image takes full width of its container on tablets */
+        border-radius: 0;      /* Remove rounded corners on tablets */
+        /* For GIFs, if 60vh is too tall on tablets, adjust it here.
+           Otherwise, keep it inherited from above. */
+        /* max-height: 50vh; */ /* Example: smaller max-height for GIFs on tablets */
+        object-fit: cover; /* Optional: Makes image fill container, may crop */
+                           /* If you prefer to see the whole image (with letterboxing), use 'contain' */
+    }
+}
+
+@media (max-width: 600px) {
+    /* Adjust overall padding for project sections on mobile */
+    #project1, #project2, #project3 {
+        padding: 2rem 1rem 1rem 1rem; /* Further reduced padding for mobile */
+    }
+
+    /* Adjust case study container padding for mobile */
+    .case-study-container {
+        padding: 1rem 0; /* Minimal horizontal padding for mobile, closer to edges */
+    }
+
+    /* Styles for images on mobile */
+    .case-study-img, .case-study-gif {
+        max-width: 100%;       /* Ensure it fills parent */
+        border-radius: 0;      /* No rounded corners */
+        /* For GIFs, if it's still too tall, or you want it to behave like a photo: */
+        /* max-height: 40vh; */ /* Example: smaller max-height for GIFs on mobile */
+        /* object-fit: cover; */ /* If you want it to fill and potentially crop */
+    }
+}
+
+@media (max-width: 450px) {
+    /* Further minimal padding for very small mobile devices */
+    #project1, #project2, #project3 {
+        padding: 1.5rem 0.5rem 0.75rem 0.5rem;
+    }
+    .case-study-container {
+        padding: 0.5rem 0; /* Almost no horizontal padding for image container */
+    }
 }
 
 #contact-and-footer {
@@ -1061,23 +1131,6 @@ nav, #desktop-nav {
     padding: 6rem 2rem;
     font-family: 'Inter', sans-serif;
     color: var(--text);
-}
-
-.case-study-img {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  background: transparent !important;
-  display: block;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.case-study-img {
-  border-radius: 0;
-  padding: 0;
-  display: block;
-  width: 100%;
-  background: transparent;
 }
 
 #project1 {
